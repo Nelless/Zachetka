@@ -1,4 +1,4 @@
-﻿<Page x:Class="Markusdrop_wpf.View.Pages.ManagerAuthPage"
+﻿<Page x:Class="Markusdrop_wpf.View.Pages.AuthPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,27 +6,28 @@
       xmlns:local="clr-namespace:Markusdrop_wpf.View.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ManagerAuthPage">
+      Title="AuthPage">
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500">
             <UniformGrid HorizontalAlignment="Center" Margin="15">
-                <TextBlock>Войти как Руководитель</TextBlock>
+                <TextBlock HorizontalAlignment="Center">выберете роль:</TextBlock>
+                <ComboBox x:Name="UserRoleComboBox" Width="180"></ComboBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center"  Margin="5">
                 <TextBlock>Введите логин</TextBlock>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center" Width="200"  Margin="15">
-                <TextBox></TextBox>
+                <TextBox x:Name="LoginTextBox"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center"  Margin="5">
                 <TextBlock>Введите пароль</TextBlock>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center" Width="200" Margin="15">
-                <TextBox></TextBox>
+                <TextBox x:Name="PasswordTextBox"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center" Width="200" Margin="15">
-                <Button Content="Войти"></Button>
+                <Button x:Name="AuthButton" Click="AuthButton_Click" Content="Войти"></Button>
             </UniformGrid>
         </StackPanel>
     </Grid>

@@ -24,7 +24,7 @@ namespace Markusdrop_wpf
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new AuthTypePage());
+            MainFrame.Navigate(new AuthPage());
         }
     }
 }

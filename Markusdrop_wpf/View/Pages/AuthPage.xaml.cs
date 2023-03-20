@@ -12,17 +12,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Markusdrop_wpf.Model;
 
 namespace Markusdrop_wpf.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для ManagerAuthPage.xaml
+    /// Логика взаимодействия для AuthPage.xaml
     /// </summary>
-    public partial class ManagerAuthPage : Page
+    public partial class AuthPage : Page
     {
-        public ManagerAuthPage()
+        Core db = new Core();
+
+        public AuthPage()
         {
             InitializeComponent();
+        }
+
+        private void AuthButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
