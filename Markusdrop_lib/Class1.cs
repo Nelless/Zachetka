@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Markusdrop_wpf.Model
+namespace Markusdrop_lib
 {
-    public class Core
+    public class Class1
     {
-        //public arm_dbEntities context = new arm_dbEntities();
     }
 }
