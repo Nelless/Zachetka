@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Markusdrop_wpf"
         mc:Ignorable="d"
         Title="MarkusDROP" Height="450" Width="800">
-    <Frame x:Name="MainFrame">
+    <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame">
         
     </Frame>
 </Window>
