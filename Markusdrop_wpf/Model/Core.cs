@@ -8,6 +8,6 @@ namespace Markusdrop_wpf.Model
 {
     public class Core
     {
-        //public arm_dbEntities context = new arm_dbEntities();
+        public arm_dbEntities context = new arm_dbEntities();
     }
 }

@@ -24,7 +24,7 @@
                 <TextBlock>Введите пароль</TextBlock>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center" Width="200" Margin="15">
-                <TextBox x:Name="PasswordTextBox"></TextBox>
+                <PasswordBox x:Name="PasswordTextBox"></PasswordBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center" Width="200" Margin="15">
                 <Button x:Name="AuthButton" Click="AuthButton_Click" Content="Войти"></Button>

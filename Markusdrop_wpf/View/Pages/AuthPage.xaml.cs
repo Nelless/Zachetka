@@ -30,7 +30,55 @@ namespace Markusdrop_wpf.View.Pages
 
         private void AuthButton_Click(object sender, RoutedEventArgs e)
         {
+            try
 
+            {
+
+                //считаем количество записей в таблице с заданными параметрами (логин, пароль)
+                user_auth auth = db.context.user_auth.Where(
+                x => x.login == LoginTextBox.Text && x.password == PasswordTextBox.Password
+                ).FirstOrDefault();
+
+                if (auth == null)
+                {
+                    MessageBox.Show("Такой пользователь отсутствует!",
+                    "Уведомление",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+
+                }
+                else
+
+                {
+
+                    switch (auth.id_user_role_fk)
+                    {
+
+                        case 1:
+                            //this.NavigationService.Navigate(new страница1());
+
+                            break;
+                        case 2:
+                            //this.NavigationService.Navigate(new страница2());
+
+                            break;
+                        case 3:
+                            //this.NavigationService.Navigate(new страница3());
+
+                            break;
+
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Критический сбор в работе приложения:" + ex.Message.ToString(),
+                "Уведомление",
+                MessageBoxButton.OK,
+                MessageBoxImage.Warning);
+            }
         }
     }
 }
