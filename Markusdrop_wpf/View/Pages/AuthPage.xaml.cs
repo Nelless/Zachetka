@@ -63,7 +63,7 @@ namespace Markusdrop_wpf.View.Pages
 
                             break;
                         case 3:
-                            //this.NavigationService.Navigate(new страница3());
+                            this.NavigationService.Navigate(new AdminPage());
 
                             break;
 
