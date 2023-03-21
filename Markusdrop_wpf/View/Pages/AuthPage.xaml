@@ -10,10 +10,6 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500">
-            <UniformGrid HorizontalAlignment="Center" Margin="15">
-                <TextBlock HorizontalAlignment="Center">выберете роль:</TextBlock>
-                <ComboBox x:Name="UserRoleComboBox" Width="180"></ComboBox>
-            </UniformGrid>
             <UniformGrid HorizontalAlignment="Center"  Margin="5">
                 <TextBlock>Введите логин</TextBlock>
             </UniformGrid>
