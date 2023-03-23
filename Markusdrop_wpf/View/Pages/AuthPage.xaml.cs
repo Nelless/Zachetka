@@ -55,11 +55,11 @@ namespace Markusdrop_wpf.View.Pages
                     {
 
                         case 1:
-                            //this.NavigationService.Navigate(new страница1());
+                            this.NavigationService.Navigate(new MainPage());
 
                             break;
                         case 2:
-                            //this.NavigationService.Navigate(new страница2());
+                            this.NavigationService.Navigate(new ManagerPage());
 
                             break;
                         case 3:
