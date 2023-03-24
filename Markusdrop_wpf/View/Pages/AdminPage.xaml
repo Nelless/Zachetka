@@ -9,6 +9,19 @@
       Title="AdminPage">
 
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12">
+            <Button Content="Выход" Width="80" Height="30"></Button>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left">
+            <UniformGrid Margin="12">
+                <Button x:Name="AddEmployeeButton" Content="Добавить и зарегистрировать сотрудника" Width="300" Height="100" Click="AddEmployeeButton_Click"></Button>
+            </UniformGrid>
+            <UniformGrid Margin="12">
+                <Button Content="Изменить данные сотрудника" Width="300" Height="100"></Button>
+            </UniformGrid>
+            <UniformGrid Margin="12">
+                <Button Content="Прикрепить сотрудника к подразделению" Width="300" Height="100"></Button>
+            </UniformGrid>
+        </StackPanel>
     </Grid>
 </Page>

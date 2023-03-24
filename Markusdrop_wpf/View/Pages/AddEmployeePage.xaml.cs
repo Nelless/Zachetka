@@ -16,18 +16,18 @@ using System.Windows.Shapes;
 namespace Markusdrop_wpf.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AdminPage.xaml
+    /// Логика взаимодействия для AddEmployeePage.xaml
     /// </summary>
-    public partial class AdminPage : Page
+    public partial class AddEmployeePage : Page
     {
-        public AdminPage()
+        public AddEmployeePage()
         {
             InitializeComponent();
         }
 
-        private void AddEmployeeButton_Click(object sender, RoutedEventArgs e)
+        private void AuthEmployeeButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddEmployeePage());
+            NavigationService.Navigate(new AuthEmployeePage());
         }
     }
 }

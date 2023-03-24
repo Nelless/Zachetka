@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Markusdrop_wpf"
         mc:Ignorable="d"
-        Title="MarkusDROP" Height="450" Width="800">
+        Title="MarkusDROP" Height="550" Width="800"
+        MaxHeight="600" MaxWidth="900">
     <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame">
-        
+
     </Frame>
 </Window>
