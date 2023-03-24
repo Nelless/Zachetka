@@ -9,13 +9,11 @@
       Title="AddEmployeePage">
 
     <Grid>
+        <TextBlock HorizontalAlignment="Center" FontSize="20">Добавление Сотрудника</TextBlock>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12">
             <Button Content="Отменить" Width="80" Height="30"></Button>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Margin="4" Width="350">
-            <UniformGrid HorizontalAlignment="Center" Margin="5">
-                <TextBlock FontSize="20">Добавление Сотрудника</TextBlock>
-            </UniformGrid>
+        <StackPanel HorizontalAlignment="Left" Margin="20" Width="350">
             <UniformGrid HorizontalAlignment="Center" Margin="2">
                 <TextBlock>Имя</TextBlock>
             </UniformGrid>
