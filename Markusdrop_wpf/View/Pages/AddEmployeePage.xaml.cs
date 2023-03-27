@@ -60,9 +60,9 @@ namespace Markusdrop_wpf.View.Pages
                 db.context.SaveChanges();
 
                 MessageBox.Show("Добавление выполнено успешно !",
-            "Уведомление",
-            MessageBoxButton.OK,
-            MessageBoxImage.Information);
+                "Уведомление",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
             }
             catch
             {

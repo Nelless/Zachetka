@@ -1,0 +1,36 @@
+﻿<Page x:Class="Markusdrop_wpf.View.Pages.AreaEmployeePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Markusdrop_wpf.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AreaEmployeePage">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" FontSize="20">Присоединить сотрудника к подразделению</TextBlock>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12">
+            <Button x:Name="AreaEmployeeBackButton" Content="Назад" Width="80" Height="30" Click="AreaEmployeeBackButton_Click"></Button>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="252" Margin="133,0,0,0">
+            <UniformGrid  Margin="10">
+                <TextBlock>Сотрудник:</TextBlock>
+            </UniformGrid>
+            <UniformGrid>
+                <ComboBox x:Name="EmployeeComboBox"></ComboBox>
+            </UniformGrid>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="136" Margin="444,0,0,0">
+            <UniformGrid Margin="10">
+                <TextBlock>Подразделение</TextBlock>
+            </UniformGrid>
+            <ComboBox x:Name="AreaComboBox"></ComboBox>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0, 0, 0, 20">
+            <UniformGrid>
+                <Button x:Name="AreaConnectButton" Content="Присоединить" Width="100" Height="40" Click="AreaConnectButton_Click"></Button>
+            </UniformGrid>
+        </StackPanel>
+    </Grid>
+</Page>
