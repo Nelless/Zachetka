@@ -9,6 +9,24 @@
       Title="ManagerPage">
 
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Left">
+            <UniformGrid>
+                <TabPanel>
+                    <TabItem Header="Фамилия" x:Name="" Width="120">
+                        
+                    </TabItem>
+                    <TabItem>
+
+                    </TabItem>
+                    <TabItem>
+
+                    </TabItem>
+                    <TabItem>
+
+                    </TabItem>
+                </TabPanel>
+            </UniformGrid>
+        </StackPanel>
+
     </Grid>
 </Page>
