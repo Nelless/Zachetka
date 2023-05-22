@@ -12,7 +12,7 @@
         <StackPanel HorizontalAlignment="Left">
             <UniformGrid>
                 <TabPanel>
-                    <TabItem Header="Фамилия" x:Name="" Width="120">
+                    <TabItem Header="Фамилия" x:Name="LastName" Width="120">
                         
                     </TabItem>
                     <TabItem>

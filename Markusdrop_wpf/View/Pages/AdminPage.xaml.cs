@@ -37,7 +37,7 @@ namespace Markusdrop_wpf.View.Pages
 
         private void EditEmployeeInfoButton_Click(object sender, RoutedEventArgs e)
         {
-            //NavigationService.Navigate(new EditEmployeeInfoPage());
+            NavigationService.Navigate(new EditEmployeeInfoPage());
         }
     }
 }
