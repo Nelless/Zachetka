@@ -9,6 +9,7 @@
       Title="AreaEmployeePage">
 
     <Grid>
+        <!---->
         <TextBlock HorizontalAlignment="Center" FontSize="20">Присоединить сотрудника к подразделению</TextBlock>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12">
             <Button x:Name="AreaEmployeeBackButton" Content="Назад" Width="80" Height="30" Click="AreaEmployeeBackButton_Click"></Button>

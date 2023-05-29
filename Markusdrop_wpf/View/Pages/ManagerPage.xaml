@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ManagerPage">
-
+<!---->
     <Grid>
         <StackPanel HorizontalAlignment="Left" Width="360">
             <StackPanel Margin="0, 20, 0, 0">
