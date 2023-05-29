@@ -32,6 +32,9 @@ namespace Markusdrop_wpf.View.Pages
             EmployeesTasksDataGrid.ItemsSource = db.context.company_task.ToList();
             EmployeesTasksDataGrid.SelectedValuePath = "id_task";
             EmployeesTasksDataGrid.DisplayMemberPath = "task_name";
+            /*
+             * 
+             */
         }
     }
 }
