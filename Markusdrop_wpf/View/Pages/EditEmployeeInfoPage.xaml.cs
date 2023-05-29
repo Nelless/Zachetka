@@ -30,17 +30,12 @@ namespace Markusdrop_wpf.View.Pages
 			EditEmployeeComboBox.DisplayMemberPath = "FLP";
 		}
 
-		private void EditEmployeeBackButton_Click(object sender, RoutedEventArgs e)
-		{
-			this.NavigationService.Navigate(new AdminPage());
-		}
-
 		private void EditEmployeeAcceptButton_Click(object sender, RoutedEventArgs e)
 		{
 			int EmployeesList = Convert.ToInt32(EditEmployeeComboBox.SelectedValue);
 			if (EmployeesList != 0)
 			{
-				
+				this.NavigationService.Navigate(new AdminPage());
 			}
 			else
 			{
@@ -53,19 +48,8 @@ namespace Markusdrop_wpf.View.Pages
 
 		private void EditEmployeeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-
 			users activeUser = EditEmployeeComboBox.SelectedItem as users;
 			this.DataContext = activeUser;
-
-		//users users= db.context.users.FirstOrDefault(x=>x.id_users==userId);
-
-		//	BeforeFirstNameTextBlock.Text = users.first_name;
-		//	BeforeLastNameTextBlock.Text = users.last_name;
-		//	BeforePatronymicTextBlock.Text = users.patronimyc;
-		//	BeforePhoneTextBlock.Text = users.phone;
-		//	BeforePassportCodeTextBlock.Text = users.passport_code;
-		//	BeforePassportNumberTextBlock.Text = users.passport_number;
-		//	BeforeEmailTextBlock.Text = users.email;
 		}
 	}
 }

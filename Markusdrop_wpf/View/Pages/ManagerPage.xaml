@@ -9,23 +9,33 @@
       Title="ManagerPage">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Left">
-            <UniformGrid>
-                <TabPanel>
-                    <TabItem Header="Фамилия" x:Name="LastName" Width="120">
-                        
-                    </TabItem>
-                    <TabItem>
+        <StackPanel HorizontalAlignment="Left" Width="360">
+            <StackPanel Margin="0, 20, 0, 0">
+                <StackPanel>
+                    <TextBlock>Поиск</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <TextBox></TextBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <DataGrid x:Name="EmployeesTasksDataGrid" AutoGenerateColumns="False" IsReadOnly="True" Margin="0, 20, 0, 0" Height="365" Width="360">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Фамилия" Binding="{Binding id_user}" Width="120">
 
-                    </TabItem>
-                    <TabItem>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Задачи" Binding="{Binding id_task}" Width="100">
 
-                    </TabItem>
-                    <TabItem>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Начало" Binding="{Binding task_startdate}" Width="70">
 
-                    </TabItem>
-                </TabPanel>
-            </UniformGrid>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Конец" Binding="{Binding task_enddate}" Width="70">
+
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
         </StackPanel>
 
     </Grid>

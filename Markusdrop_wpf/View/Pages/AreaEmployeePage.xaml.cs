@@ -43,7 +43,7 @@ namespace Markusdrop_wpf.View.Pages
         {
             users users = new users()
             {
-                id_users = Convert.ToInt32(EmployeeComboBox.SelectedValue),
+                id_users = Convert.ToInt32(Employee1ComboBox.SelectedValue),
             };
 
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Markusdrop_wpf.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,17 @@ namespace Markusdrop_wpf.View.Pages
     /// </summary>
     public partial class ManagerPage : Page
     {
+        Core db = new Core();
         public ManagerPage()
         {
             InitializeComponent();
+            EmployeesTasksDataGrid.ItemsSource = db.context.users.ToList();
+            EmployeesTasksDataGrid.SelectedValuePath = "id_users";
+            EmployeesTasksDataGrid.DisplayMemberPath = "last_name";
+
+            EmployeesTasksDataGrid.ItemsSource = db.context.company_task.ToList();
+            EmployeesTasksDataGrid.SelectedValuePath = "id_task";
+            EmployeesTasksDataGrid.DisplayMemberPath = "task_name";
         }
     }
 }

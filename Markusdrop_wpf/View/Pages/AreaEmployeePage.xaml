@@ -13,19 +13,21 @@
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12">
             <Button x:Name="AreaEmployeeBackButton" Content="Назад" Width="80" Height="30" Click="AreaEmployeeBackButton_Click"></Button>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="252" Margin="133,0,0,0">
-            <UniformGrid  Margin="10">
-                <TextBlock>Сотрудник:</TextBlock>
-            </UniformGrid>
-            <UniformGrid>
-                <ComboBox x:Name="EmployeeComboBox"></ComboBox>
-            </UniformGrid>
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="136" Margin="444,0,0,0">
-            <UniformGrid Margin="10">
-                <TextBlock>Подразделение</TextBlock>
-            </UniformGrid>
-            <ComboBox x:Name="AreaComboBox"></ComboBox>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal" Margin="0, 180, 0, 0">
+            <StackPanel Width="252" Margin="10,0,10,0">
+                <UniformGrid  Margin="10">
+                    <TextBlock>Сотрудник:</TextBlock>
+                </UniformGrid>
+                <UniformGrid>
+                    <ComboBox x:Name="EmployeeComboBox"></ComboBox>
+                </UniformGrid>
+            </StackPanel>
+            <StackPanel Width="136" Margin="210,0,10,0">
+                <UniformGrid Margin="10">
+                    <TextBlock>Подразделение</TextBlock>
+                </UniformGrid>
+                <ComboBox x:Name="AreaComboBox"></ComboBox>
+            </StackPanel>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0, 0, 0, 20">
             <UniformGrid>

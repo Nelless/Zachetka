@@ -22,49 +22,49 @@
                     <TextBlock>Фамилия</TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock x:Name="BeforeLastNameTextBlock" Background="Gray" Margin="1" Height="18"></TextBlock>
+                    <TextBox x:Name="BeforeLastNameTextBlock" Text="{Binding last_name}" Margin="1" Height="18"></TextBox>
                 </StackPanel>
                 <StackPanel Margin="1">
                     <TextBlock>Отчество</TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock x:Name="BeforePatronymicTextBlock" Background="Gray" Margin="1" Height="18"></TextBlock>
+                    <TextBox x:Name="BeforePatronymicTextBlock" Text="{Binding patronimyc}" Margin="1" Height="18"></TextBox>
                 </StackPanel>
                 <StackPanel Margin="1">
                     <TextBlock>Телефон</TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock x:Name="BeforePhoneTextBlock" Background="Gray" Margin="1" Height="18"></TextBlock>
+                    <TextBox x:Name="BeforePhoneTextBlock" Text="{Binding phone}" Margin="1" Height="18"></TextBox>
                 </StackPanel>
                 <StackPanel Margin="1">
                     <TextBlock>Код паспорта</TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock x:Name="BeforePassportCodeTextBlock" Background="Gray" Margin="1" Height="18"></TextBlock>
+                    <TextBox x:Name="BeforePassportCodeTextBlock" Text="{Binding passport_code}" Margin="1" Height="18"></TextBox>
                 </StackPanel>
                 <StackPanel Margin="1">
                     <TextBlock>номер паспорта</TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock x:Name="BeforePassportNumberTextBlock" Background="Gray" Margin="1" Height="18"></TextBlock>
+                    <TextBox x:Name="BeforePassportNumberTextBlock" Text="{Binding passport_number}" Margin="1" Height="18"></TextBox>
                 </StackPanel>
                 <StackPanel Margin="1">
                     <TextBlock>ИНН</TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock x:Name="BeforeINNTextBlock" Background="Gray" Margin="1" Height="18"></TextBlock>
+                    <TextBox x:Name="BeforeINNTextBlock"  Text="{Binding INN}" Margin="1" Height="18"></TextBox>
                 </StackPanel>
                 <StackPanel Margin="1">
                     <TextBlock>СНИЛС</TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock x:Name="BeforeSNILSTextBlock" Background="Gray" Margin="1" Height="18"></TextBlock>
+                    <TextBox x:Name="BeforeSNILSTextBlock" Text="{Binding SNILS}" Margin="1" Height="18"></TextBox>
                 </StackPanel>
                 <StackPanel Margin="1">
                     <TextBlock>Email</TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <TextBlock x:Name="BeforeEmailTextBlock" Background="Gray" Margin="1" Height="18"></TextBlock>
+                    <TextBox x:Name="BeforeEmailTextBlock" Text="{Binding email}" Margin="1" Height="18"></TextBox>
                 </StackPanel>
                 <StackPanel Margin="0, 50, 0, 0">
                     <Button x:Name="EditEmployeeAcceptButton" Click="EditEmployeeAcceptButton_Click">Подтвердить</Button>
