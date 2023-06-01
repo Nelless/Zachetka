@@ -13,10 +13,10 @@ namespace Markusdrop_wpf.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class markusdbEntities : DbContext
+    public partial class armdropdbEntities : DbContext
     {
-        public markusdbEntities()
-            : base("name=markusdbEntities")
+        public armdropdbEntities()
+            : base("name=armdropdbEntities")
         {
         }
     
