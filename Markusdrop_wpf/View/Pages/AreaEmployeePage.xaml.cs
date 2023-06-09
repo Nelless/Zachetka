@@ -36,7 +36,10 @@ namespace Markusdrop_wpf.View.Pages
 
         private void AreaEmployeeBackButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AdminPage());
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.GoBack();
+            }
         }
 
         private void AreaConnectButton_Click(object sender, RoutedEventArgs e)

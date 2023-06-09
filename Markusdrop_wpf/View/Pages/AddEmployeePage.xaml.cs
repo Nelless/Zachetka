@@ -72,7 +72,10 @@ namespace Markusdrop_wpf.View.Pages
 
         private void AddEmployeeBackButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new AdminPage());
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.GoBack();
+            }
         }
     }
 }

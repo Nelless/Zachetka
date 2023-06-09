@@ -21,22 +21,26 @@
             <StackPanel>
                 <DataGrid x:Name="EmployeesTasksDataGrid" AutoGenerateColumns="False" IsReadOnly="True" Margin="0, 20, 0, 0" Height="365" Width="360">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Фамилия" Binding="{Binding id_user}" Width="120">
+                        <DataGridTextColumn Header="Фамилия" Binding="{Binding id_user}" Width="100">
 
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Задачи" Binding="{Binding id_task}" Width="100">
+                        <DataGridTextColumn Header="Задачи" Binding="{Binding id_task}" Width="168">
 
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Начало" Binding="{Binding task_startdate}" Width="70">
-
-                        </DataGridTextColumn>
-                        <DataGridTextColumn Header="Конец" Binding="{Binding task_enddate}" Width="70">
+                        <DataGridTextColumn Header="Выполнено" Binding="{Binding task_enddate}" Width="90">
 
                         </DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
         </StackPanel>
-
+        <StackPanel HorizontalAlignment="Right" Width="360">
+            <StackPanel Margin="0, 40, 0, 0">
+                <Button x:Name="TaskManagementButton" Content="управление задачами" FontSize="20" Height="50" Width="250" Click="TaskManagementButton_Click"></Button>
+            </StackPanel>
+            <StackPanel Margin="0, 40, 0, 0">
+                <Button x:Name="TaskGiveButton" Content="дать задачу" FontSize="20" Height="50" Width="250" Click="TaskGiveButton_Click"></Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
