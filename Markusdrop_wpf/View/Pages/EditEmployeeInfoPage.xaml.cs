@@ -35,11 +35,14 @@ namespace Markusdrop_wpf.View.Pages
 			int EmployeesList = Convert.ToInt32(EditEmployeeComboBox.SelectedValue);
 			if (EmployeesList != 0)
 			{
-				this.NavigationService.Navigate(new AdminPage());
-			}
+                MessageBox.Show("Изменение произошло успешно!",
+                "Уведомление",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
+            }
 			else
 			{
-				MessageBox.Show("Выберете сотрудника из списка!",
+				MessageBox.Show("Пожалуйста, выберете сотрудника из списка",
 				"Предупреждение",
 				MessageBoxButton.OK,
 				MessageBoxImage.Error);

@@ -4,39 +4,103 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Markusdrop_wpf.View.Pages"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      mc:Ignorable="d"
+      d:DesignHeight="750" d:DesignWidth="800"
       Title="TaskManagementPage">
 
     <Grid>
         <StackPanel HorizontalAlignment="Right">
-            <Button x:Name="TaskManagementBackButton" Content="Назад" Width="100" Click="TaskManagementBackButton_Click"></Button>
+            <Button x:Name="TaskManagementBackButton" Content="Назад" Width="100" Height="30" Click="TaskManagementBackButton_Click" Margin="0, 700, 10, 0"></Button>
         </StackPanel>
         <Grid HorizontalAlignment="Left">
-            <TextBlock FontSize="25" Margin="0, 30, 0, 0">
+            <TextBlock FontSize="25" Margin="0, 40, 0, 0">
                 Добавление задачи
             </TextBlock>
-            <StackPanel Margin="0, 170, 0, 0">
+            <StackPanel Margin="20, 120, 0, 0">
                 <StackPanel HorizontalAlignment="Center">
                     <TextBlock>Название задачи</TextBlock>
                 </StackPanel>
                 <StackPanel Margin="0, 10, 0, 0">
-                    <TextBox></TextBox>
+                    <TextBox x:Name="TaskNameAddTextBox" Height="22"></TextBox>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
+                    <TextBlock>Текст задачи</TextBlock>
                 </StackPanel>
                 <StackPanel Margin="0, 20, 0, 0">
-                    <Button Content="Добавить" Width="100"></Button>
+                    <TextBox x:Name="TasktextAddTextBox" Height="22"></TextBox>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
+                    <TextBlock>Дата начала задачи</TextBlock>
+                </StackPanel>
+                <StackPanel Margin="0, 20, 0, 0">
+                    <Calendar></Calendar>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
+                    <TextBlock>Дата окончания задачи</TextBlock>
+                </StackPanel>
+                <StackPanel Margin="0, 20, 0, 0">
+                    <Calendar></Calendar>
+                </StackPanel>
+                <StackPanel Margin="0, 20, 0, 0">
+                    <Button x:Name="TaskAddButton" Content="Добавить" Width="100" Click="TaskAddButton_Click"></Button>
                 </StackPanel>
             </StackPanel>
         </Grid>
         <Grid HorizontalAlignment="Center">
-            <TextBlock FontSize="25" Margin="0, 30, 0, 0">
+            <TextBlock FontSize="25" Margin="0, 40, 0, 0">
                 Редактирование задачи
             </TextBlock>
+            <StackPanel Margin="0, 80, 0, 0">
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock>Выбрать задачу:</TextBlock>
+                </StackPanel>
+                <StackPanel Margin="0, 10, 0, 0">
+                    <ComboBox x:Name="TaskEditTComboBox" SelectionChanged="TaskEditTComboBox_SelectionChanged"></ComboBox>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
+                    <TextBlock>Изменить название задачи:</TextBlock>
+                </StackPanel>
+                <StackPanel Margin="0, 10, 0, 0">
+                    <TextBox x:Name="TaskNameEditTextBox" Height="22"></TextBox>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
+                    <TextBlock>Изменить текст задачи:</TextBlock>
+                </StackPanel>
+                <StackPanel Margin="0, 10, 0, 0">
+                    <TextBox x:Name="TaskTextEditTextBox" Height="22"></TextBox>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
+                    <TextBlock>Дата начала задачи</TextBlock>
+                </StackPanel>
+                <StackPanel Margin="0, 10, 0, 0">
+                    <Calendar></Calendar>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
+                    <TextBlock>Дата окончания задачи</TextBlock>
+                </StackPanel>
+                <StackPanel Margin="0, 10, 0, 0">
+                    <Calendar></Calendar>
+                </StackPanel>
+                <StackPanel Margin="0, 30, 0, 0">
+                    <Button x:Name="TaskEditButton" Content="Подтвердить" Width="100" Click="TaskEditButton_Click"></Button>
+                </StackPanel>
+            </StackPanel>
         </Grid>
         <Grid HorizontalAlignment="Right">
-            <TextBlock FontSize="25" Margin="0, 30, 0, 0">
+            <TextBlock FontSize="25" Margin="0, 40, 20, 0">
                 Удаление задачи
             </TextBlock>
+            <StackPanel Margin="0, 300, 0, 0">
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock>Выбрать задачу:</TextBlock>
+                </StackPanel>
+                <StackPanel Margin="0, 20, 0, 0">
+                    <ComboBox x:Name="TaskDeleteCombobox" SelectionChanged="TaskDeleteCombobox_SelectionChanged" Width="160"></ComboBox>
+                </StackPanel>
+                <StackPanel Margin="0, 20, 0, 0">
+                    <Button x:Name="TaskDeleteButton" Content="Удалить" Width="100" Click="TaskDeleteButton_Click"></Button>
+                </StackPanel>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

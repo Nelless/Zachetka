@@ -56,35 +56,24 @@
             <UniformGrid HorizontalAlignment="Center">
                 <TextBox x:Name="INNTextBox" Width="150"></TextBox>
             </UniformGrid>
-            <UniformGrid HorizontalAlignment="Center" Margin="5">
-                <TextBlock>СНИЛС</TextBlock>
+            <UniformGrid HorizontalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center">СНИЛС</TextBlock><TextBox x:Name="SNILSTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBox x:Name="SNILSTextBox" Width="150"></TextBox>
-            </UniformGrid>
-            <UniformGrid HorizontalAlignment="Center" Margin="5">
-                <TextBlock>Email</TextBlock>
-            </UniformGrid>
-            <UniformGrid HorizontalAlignment="Center">
-                <TextBox x:Name="EmailTextBox" Width="150"></TextBox>
+                <TextBlock HorizontalAlignment="Center">Email</TextBlock><TextBox x:Name="EmailTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center" Margin="10">
                 <TextBlock HorizontalAlignment="Center">Роль:</TextBlock>
                 <ComboBox x:Name="UserRoleComboBox" HorizontalAlignment="Center" Width="150"></ComboBox>
             </UniformGrid>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="12">
-            <UniformGrid HorizontalAlignment="Center" Margin="10">
-                <TextBlock>Установить логин</TextBlock>
-            </UniformGrid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="250, 0, 0, 0">
             <UniformGrid>
+                <TextBlock Margin="0, 0, 40, 0">Установить логин</TextBlock>
                 <TextBox x:Name="LoginTextBox"></TextBox>
             </UniformGrid>
-            <UniformGrid HorizontalAlignment="Center" Margin="10">
-                <TextBlock>Установить пароль</TextBlock>
-            </UniformGrid>
             <UniformGrid>
-                <PasswordBox x:Name="PasswordBox"></PasswordBox>
+                <TextBlock Margin="0, 0, 40, 0">Установить пароль</TextBlock><PasswordBox x:Name="PasswordBox"></PasswordBox>
             </UniformGrid>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">

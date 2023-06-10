@@ -63,38 +63,37 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\company_areas.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>dbmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\company_task.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>dbmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbmodel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbmodel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbmodel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbmodel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbmodel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\employee_task.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>dbmodel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PartialClasses\users.cs" />
     <Compile Include="Model\users.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>dbmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\user_auth.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>dbmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\user_role.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>dbmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\AddEmployeePage.xaml.cs">
       <DependentUpon>AddEmployeePage.xaml</DependentUpon>
@@ -188,13 +187,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Assets\other\Коровин.pdf" />
-    <EntityDeploy Include="Model\Model1.edmx">
+    <EntityDeploy Include="Model\dbmodel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>dbmodel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
+    <None Include="Model\dbmodel.edmx.diagram">
+      <DependentUpon>dbmodel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -205,22 +203,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\dbmodel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbmodel.edmx</DependentUpon>
+      <LastGenOutput>dbmodel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\dbmodel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbmodel.edmx</DependentUpon>
+      <LastGenOutput>dbmodel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\other\arm_db_complete_v2.3.sql" />
-    <Content Include="Model\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
+    <Folder Include="Model\PartialClasses\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

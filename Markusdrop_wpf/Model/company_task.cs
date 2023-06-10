@@ -21,6 +21,7 @@ namespace Markusdrop_wpf.Model
     
         public int id_task { get; set; }
         public string task_name { get; set; }
+        public string task_text { get; set; }
         public Nullable<System.DateTime> task_startdate { get; set; }
         public Nullable<System.DateTime> task_enddate { get; set; }
     

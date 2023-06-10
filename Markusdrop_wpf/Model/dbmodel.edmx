@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище armdropdbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище armmarkdbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="company_areas">
           <Key>
             <PropertyRef Name="id_area" />
@@ -18,6 +18,7 @@
           </Key>
           <Property Name="id_task" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="task_name" Type="varchar" MaxLength="100" />
+          <Property Name="task_text" Type="varchar" MaxLength="500" />
           <Property Name="task_startdate" Type="datetime" />
           <Property Name="task_enddate" Type="datetime" />
         </EntityType>
@@ -122,7 +123,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище armdropdbModelContainer">
+        <EntityContainer Name="Хранилище armmarkdbModelContainer">
           <EntitySet Name="company_areas" EntityType="Self.company_areas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="company_task" EntityType="Self.company_task" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="employee_task" EntityType="Self.employee_task" Schema="dbo" store:Type="Tables" />
@@ -154,7 +155,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="armdropdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="armmarkdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="company_areas">
           <Key>
             <PropertyRef Name="id_area" />
@@ -169,6 +170,7 @@
           </Key>
           <Property Name="id_task" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="task_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="task_text" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="task_startdate" Type="DateTime" Precision="3" />
           <Property Name="task_enddate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="employee_task" Relationship="Self.FK_employee_task_company_task" FromRole="company_task" ToRole="employee_task" />
@@ -282,7 +284,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="armdropdbEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="armmarkdbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="company_areas" EntityType="Self.company_areas" />
           <EntitySet Name="company_task" EntityType="Self.company_task" />
           <EntitySet Name="employee_task" EntityType="Self.employee_task" />
@@ -315,9 +317,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище armdropdbModelContainer" CdmEntityContainer="armdropdbEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище armmarkdbModelContainer" CdmEntityContainer="armmarkdbEntities">
           <EntitySetMapping Name="company_areas">
-            <EntityTypeMapping TypeName="armdropdbModel.company_areas">
+            <EntityTypeMapping TypeName="armmarkdbModel.company_areas">
               <MappingFragment StoreEntitySet="company_areas">
                 <ScalarProperty Name="id_area" ColumnName="id_area" />
                 <ScalarProperty Name="area_name" ColumnName="area_name" />
@@ -325,17 +327,18 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="company_task">
-            <EntityTypeMapping TypeName="armdropdbModel.company_task">
+            <EntityTypeMapping TypeName="armmarkdbModel.company_task">
               <MappingFragment StoreEntitySet="company_task">
                 <ScalarProperty Name="id_task" ColumnName="id_task" />
                 <ScalarProperty Name="task_name" ColumnName="task_name" />
+                <ScalarProperty Name="task_text" ColumnName="task_text" />
                 <ScalarProperty Name="task_startdate" ColumnName="task_startdate" />
                 <ScalarProperty Name="task_enddate" ColumnName="task_enddate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="employee_task">
-            <EntityTypeMapping TypeName="armdropdbModel.employee_task">
+            <EntityTypeMapping TypeName="armmarkdbModel.employee_task">
               <MappingFragment StoreEntitySet="employee_task">
                 <ScalarProperty Name="id_employee_task" ColumnName="id_employee_task" />
                 <ScalarProperty Name="employee_id" ColumnName="employee_id" />
@@ -344,7 +347,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="user_auth">
-            <EntityTypeMapping TypeName="armdropdbModel.user_auth">
+            <EntityTypeMapping TypeName="armmarkdbModel.user_auth">
               <MappingFragment StoreEntitySet="user_auth">
                 <ScalarProperty Name="id_user_auth" ColumnName="id_user_auth" />
                 <ScalarProperty Name="id_user" ColumnName="id_user" />
@@ -355,7 +358,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="user_role">
-            <EntityTypeMapping TypeName="armdropdbModel.user_role">
+            <EntityTypeMapping TypeName="armmarkdbModel.user_role">
               <MappingFragment StoreEntitySet="user_role">
                 <ScalarProperty Name="id_user_role" ColumnName="id_user_role" />
                 <ScalarProperty Name="user_role_name" ColumnName="user_role_name" />
@@ -363,7 +366,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="armdropdbModel.users">
+            <EntityTypeMapping TypeName="armmarkdbModel.users">
               <MappingFragment StoreEntitySet="users">
                 <ScalarProperty Name="id_users" ColumnName="id_users" />
                 <ScalarProperty Name="first_name" ColumnName="first_name" />

@@ -5,14 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Markusdrop_wpf.View.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="750" d:DesignWidth="800"
       Title="EditEmployeeInfoPage">
 
     <Grid>
         <!---->
         <TextBlock HorizontalAlignment="Center" FontSize="20">Изменение данных сотрудника</TextBlock>
         <UniformGrid HorizontalAlignment="Center" Width="200">
-            <StackPanel Orientation="Vertical" Margin="0, 30, 0, 0">
+            <StackPanel Orientation="Vertical" Margin="0, 200, 0, 0">
                 <StackPanel Margin="1">
                     <TextBlock>Имя</TextBlock>
                 </StackPanel>
@@ -72,7 +72,7 @@
                 </StackPanel>
             </StackPanel>
         </UniformGrid>
-        <UniformGrid HorizontalAlignment="Left" Margin="20, 40 ,0 ,0" Width="200">
+        <UniformGrid HorizontalAlignment="Left" Margin="20, 200 ,0 ,0" Width="200">
             <StackPanel Orientation="Vertical">
                 <StackPanel Margin="2">
                     <TextBlock>Выбрать сотрудника:</TextBlock>
