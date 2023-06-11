@@ -9,78 +9,51 @@
       Title="EditEmployeeInfoPage">
 
     <Grid>
-        <!---->
-        <TextBlock HorizontalAlignment="Center" FontSize="20">Изменение данных сотрудника</TextBlock>
-        <UniformGrid HorizontalAlignment="Center" Width="200">
-            <StackPanel Orientation="Vertical" Margin="0, 200, 0, 0">
-                <StackPanel Margin="1">
-                    <TextBlock>Имя</TextBlock>
+        <StackPanel HorizontalAlignment="Right" Margin="0, 10, 10, 0">
+            <Button x:Name="EditEmployeeBackButton" Width="100" Height="50" Click="EditEmployeeBackButton_Click">Назад</Button>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="256,0,256,720">Изменение данных сотрудника</TextBlock>
+        <UniformGrid HorizontalAlignment="Center" Width="800">
+            <StackPanel Orientation="Vertical" Margin="450,220,50,270" Width="300">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="100">Имя</TextBlock><TextBox x:Name="BeforeFirstNameTextBlock" Text="{Binding first_name}" Margin="0, 0, 0, 10" Width="175"></TextBox>
                 </StackPanel>
-                <StackPanel>
-                    <TextBox x:Name="BeforeFirstNameTextBlock" Text="{Binding first_name}" Margin="1" Height="18"></TextBox>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="100">Фамилия</TextBlock><TextBox x:Name="BeforeLastNameTextBlock" Text="{Binding last_name}" Margin="0, 0, 0, 10" Width="175"></TextBox>
                 </StackPanel>
-                <StackPanel Margin="1">
-                    <TextBlock>Фамилия</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="100">Отчество</TextBlock><TextBox x:Name="BeforePatronymicTextBlock" Text="{Binding patronimyc}" Margin="0, 0, 0, 10" Width="175"></TextBox>
                 </StackPanel>
-                <StackPanel>
-                    <TextBox x:Name="BeforeLastNameTextBlock" Text="{Binding last_name}" Margin="1" Height="18"></TextBox>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="100">Телефон</TextBlock><TextBox x:Name="BeforePhoneTextBlock" Text="{Binding phone}" Margin="0, 0, 0, 10" Width="175"></TextBox>
                 </StackPanel>
-                <StackPanel Margin="1">
-                    <TextBlock>Отчество</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="100">Код паспорта</TextBlock><TextBox x:Name="BeforePassportCodeTextBlock" Text="{Binding passport_code}" Margin="0, 0, 0, 10" Width="175"></TextBox>
                 </StackPanel>
-                <StackPanel>
-                    <TextBox x:Name="BeforePatronymicTextBlock" Text="{Binding patronimyc}" Margin="1" Height="18"></TextBox>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="100">номер паспорта</TextBlock><TextBox x:Name="BeforePassportNumberTextBlock" Text="{Binding passport_number}" Margin="0, 0, 0, 10" Width="175"></TextBox>
                 </StackPanel>
-                <StackPanel Margin="1">
-                    <TextBlock>Телефон</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="100">ИНН</TextBlock><TextBox x:Name="BeforeINNTextBlock"  Text="{Binding INN}" Margin="0, 0, 0, 10" Width="175"></TextBox>
                 </StackPanel>
-                <StackPanel>
-                    <TextBox x:Name="BeforePhoneTextBlock" Text="{Binding phone}" Margin="1" Height="18"></TextBox>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="100">СНИЛС</TextBlock><TextBox x:Name="BeforeSNILSTextBlock" Text="{Binding SNILS}" Margin="0, 0, 0, 10" Width="175"></TextBox>
                 </StackPanel>
-                <StackPanel Margin="1">
-                    <TextBlock>Код паспорта</TextBlock>
-                </StackPanel>
-                <StackPanel>
-                    <TextBox x:Name="BeforePassportCodeTextBlock" Text="{Binding passport_code}" Margin="1" Height="18"></TextBox>
-                </StackPanel>
-                <StackPanel Margin="1">
-                    <TextBlock>номер паспорта</TextBlock>
-                </StackPanel>
-                <StackPanel>
-                    <TextBox x:Name="BeforePassportNumberTextBlock" Text="{Binding passport_number}" Margin="1" Height="18"></TextBox>
-                </StackPanel>
-                <StackPanel Margin="1">
-                    <TextBlock>ИНН</TextBlock>
-                </StackPanel>
-                <StackPanel>
-                    <TextBox x:Name="BeforeINNTextBlock"  Text="{Binding INN}" Margin="1" Height="18"></TextBox>
-                </StackPanel>
-                <StackPanel Margin="1">
-                    <TextBlock>СНИЛС</TextBlock>
-                </StackPanel>
-                <StackPanel>
-                    <TextBox x:Name="BeforeSNILSTextBlock" Text="{Binding SNILS}" Margin="1" Height="18"></TextBox>
-                </StackPanel>
-                <StackPanel Margin="1">
-                    <TextBlock>Email</TextBlock>
-                </StackPanel>
-                <StackPanel>
-                    <TextBox x:Name="BeforeEmailTextBlock" Text="{Binding email}" Margin="1" Height="18"></TextBox>
-                </StackPanel>
-                <StackPanel Margin="0, 50, 0, 0">
-                    <Button x:Name="EditEmployeeAcceptButton" Click="EditEmployeeAcceptButton_Click">Подтвердить</Button>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="100">Email</TextBlock>
+                    <TextBox x:Name="BeforeEmailTextBlock" Text="{Binding email}" Margin="0, 0, 0, 10" Width="175"></TextBox>
                 </StackPanel>
             </StackPanel>
         </UniformGrid>
-        <UniformGrid HorizontalAlignment="Left" Margin="20, 200 ,0 ,0" Width="200">
-            <StackPanel Orientation="Vertical">
-                <StackPanel Margin="2">
-                    <TextBlock>Выбрать сотрудника:</TextBlock>
-                </StackPanel>
-                <StackPanel Margin="2">
-                    <ComboBox x:Name="EditEmployeeComboBox" SelectionChanged="EditEmployeeComboBox_SelectionChanged"></ComboBox>
+        <UniformGrid HorizontalAlignment="Left" Margin="20, 220 ,0 ,0" Width="340">
+            <StackPanel Orientation="Vertical" Margin="0,0,0,500">
+                <StackPanel Margin="2" Orientation="Horizontal">
+                    <TextBlock Width="140">Выбрать сотрудника:</TextBlock><ComboBox x:Name="EditEmployeeComboBox" SelectionChanged="EditEmployeeComboBox_SelectionChanged" Width="200"></ComboBox>
                 </StackPanel>
             </StackPanel>
         </UniformGrid>
+        <StackPanel Margin="0, 700, 0, 0">
+            <Button x:Name="EditEmployeeAcceptButton" Click="EditEmployeeAcceptButton_Click" Width="200">Подтвердить</Button>
+        </StackPanel>
     </Grid>
 </Page>

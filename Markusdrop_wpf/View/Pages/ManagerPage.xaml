@@ -5,11 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Markusdrop_wpf.View.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="750" d:DesignWidth="800"
       Title="ManagerPage">
 <!---->
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Width="360">
+        <StackPanel HorizontalAlignment="Left" Width="360" Margin="40, 0, 0, 0">
             <StackPanel Margin="0, 20, 0, 0">
                 <StackPanel>
                     <TextBlock>Поиск</TextBlock>
@@ -39,7 +39,7 @@
                 <Button x:Name="TaskManagementButton" Content="управление задачами" FontSize="20" Height="50" Width="250" Click="TaskManagementButton_Click"></Button>
             </StackPanel>
             <StackPanel Margin="0, 40, 0, 0">
-                <Button x:Name="TaskGiveButton" Content="дать задачу" FontSize="20" Height="50" Width="250" Click="TaskGiveButton_Click"></Button>
+                <Button x:Name="TaskGiveButton" Content="Дать задачу" FontSize="20" Height="50" Width="250" Click="TaskGiveButton_Click"></Button>
             </StackPanel>
         </StackPanel>
     </Grid>

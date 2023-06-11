@@ -55,5 +55,13 @@ namespace Markusdrop_wpf.View.Pages
 			users activeUser = EditEmployeeComboBox.SelectedItem as users;
 			this.DataContext = activeUser;
 		}
-	}
+
+        private void EditEmployeeBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService.CanGoBack)
+            {
+                this.NavigationService.GoBack();
+            }
+        }
+    }
 }
