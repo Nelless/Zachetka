@@ -110,6 +110,9 @@
     <Compile Include="View\Pages\EditEmployeeInfoPage.xaml.cs">
       <DependentUpon>EditEmployeeInfoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\GiveTaskPage.xaml.cs">
+      <DependentUpon>GiveTaskPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -152,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Pages\EditEmployeeInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\GiveTaskPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -120,7 +120,7 @@ namespace Markusdrop_wpf.View.Pages
             }
             else
             {
-                MessageBox.Show("Пожалуйста, выберете сотрудника из списка",
+                MessageBox.Show("Пожалуйста, выберете задачу из списка",
                 "Предупреждение",
                 MessageBoxButton.OK,
                 MessageBoxImage.Warning);
