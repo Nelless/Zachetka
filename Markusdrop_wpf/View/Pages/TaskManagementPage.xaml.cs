@@ -80,12 +80,6 @@ namespace Markusdrop_wpf.View.Pages
             this.DataContext = TaskEditCompany;
         }
 
-        private void TaskDeleteCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            company_task TaskDeleteCompany = TaskDeleteCombobox.SelectedItem as company_task;
-            this.DataContext = TaskDeleteCompany;
-        }
-
         private void TaskDeleteButton_Click(object sender, RoutedEventArgs e)
         {
             var delete = TaskDeleteCombobox.SelectedItem as company_task;

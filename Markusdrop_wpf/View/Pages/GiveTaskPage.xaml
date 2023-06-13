@@ -5,10 +5,35 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Markusdrop_wpf.View.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="850" d:DesignWidth="800"
       Title="GiveTaskPage">
 
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Right">
+            <Button x:Name="GiveTaskBackButton" Content="Назад" Width="100" Height="30" Click="GiveTaskBackButton_Click" Margin="0, 10, 10, 0"></Button>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="10, 0, 20, 0">
+                    <TextBlock>Выбрать сотрудника:</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <ComboBox x:Name="GiveEmployeeTaskCombobox" Width="150"></ComboBox>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="40, 0, 20, 0">
+                    <TextBlock>Выберете задачу:</TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <ComboBox x:Name="TaskListCombobox" Width="200"></ComboBox>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 100, 0, 0">
+            <Button x:Name="GiveEmployeeTaskButton" Width="150" Click="GiveEmployeeTaskButton_Click">
+                <TextBlock>Выдать</TextBlock>
+            </Button>
+        </StackPanel>
     </Grid>
 </Page>

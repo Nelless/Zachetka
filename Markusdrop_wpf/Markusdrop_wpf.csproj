@@ -86,6 +86,7 @@
     <Compile Include="Model\employee_task.cs">
       <DependentUpon>dbmodel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\PartialClasses\users.cs" />
     <Compile Include="Model\users.cs">
       <DependentUpon>dbmodel.tt</DependentUpon>
     </Compile>
@@ -225,8 +226,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\PartialClasses\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

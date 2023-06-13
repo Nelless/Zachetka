@@ -39,9 +39,9 @@ namespace Markusdrop_wpf.View.Pages
             this.NavigationService.Navigate(new TaskManagementPage());
         }
 
-        private void TaskGiveButton_Click(object sender, RoutedEventArgs e)
+        private void GiveEmployeeTaskButton_Click(object sender, RoutedEventArgs e)
         {
-            //this.NavigationService.Navigate(new TaskGivePage());
+            this.NavigationService.Navigate(new GiveTaskPage());
         }
     }
 }

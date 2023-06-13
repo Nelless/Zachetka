@@ -24,5 +24,18 @@ namespace Markusdrop_wpf.View.Pages
         {
             InitializeComponent();
         }
+
+        private void GiveTaskBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService.CanGoBack)
+            {
+                this.NavigationService.GoBack();
+            }
+        }
+
+        private void GiveEmployeeTaskButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

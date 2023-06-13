@@ -9,7 +9,8 @@
       Title="AddEmployeePage">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Center" FontSize="20">Добавление сотрудника</TextBlock>
+        <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="80, 50, 0, 0">Добавление сотрудника</TextBlock>
+        <TextBlock HorizontalAlignment="Right" FontSize="20" Margin="0, 50, 80, 0">Добавление сотрудника</TextBlock>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12">
             <Button x:Name="AddEmployeeBackButton" Content="Назад" Width="80" Height="30" Click="AddEmployeeBackButton_Click"></Button>
         </StackPanel>
@@ -45,20 +46,40 @@
                 <TextBlock>Роль:</TextBlock>
                 <ComboBox x:Name="UserRoleComboBox" HorizontalAlignment="Center" Width="150"></ComboBox>
             </UniformGrid>
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="250, 0, 0, 0">
             <UniformGrid>
                 <TextBlock Margin="0, 0, 40, 0">Установить логин</TextBlock>
                 <TextBox x:Name="LoginTextBox"></TextBox>
             </UniformGrid>
             <UniformGrid>
-                <TextBlock Margin="0, 0, 40, 0">Установить пароль</TextBlock><PasswordBox x:Name="PasswordBox"></PasswordBox>
+                <TextBlock Margin="0, 0, 40, 0">Установить пароль</TextBlock>
+                <PasswordBox x:Name="PasswordBox"></PasswordBox>
             </UniformGrid>
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <UniformGrid HorizontalAlignment="Center" Margin="10">
                 <Button x:Name="AuthEmployeeButton" Content="Добавить" Width="80" Height="25" Click="AuthEmployeeButton_Click"></Button>
             </UniformGrid>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="250, 200, 0, 0">
+            <!--<UniformGrid>
+                <TextBlock Margin="0, 0, 40, 0">Установить логин</TextBlock>
+                <TextBox x:Name="LoginTextBox"></TextBox>
+            </UniformGrid>
+            <UniformGrid>
+                <TextBlock Margin="0, 0, 40, 0">Установить пароль</TextBlock><PasswordBox x:Name="PasswordBox"></PasswordBox>
+            </UniformGrid>-->
+            <StackPanel Margin="0, 0, 0, 0">
+                <UniformGrid>
+                    <TextBlock Margin="0, 0, 40, 0">Удалить сотрудника</TextBlock>
+                    <ComboBox x:Name="DeleteEmployeeComboBox"></ComboBox>
+                </UniformGrid>
+                <UniformGrid HorizontalAlignment="Center" Margin="10">
+                    <Button x:Name="DeleteEmployeeButton" Content="Удалить" Width="80" Height="25" Click="DeleteEmployeeButton_Click"></Button>
+                </UniformGrid>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <!--<UniformGrid HorizontalAlignment="Center" Margin="10">
+                <Button x:Name="AuthEmployeeButton" Content="Добавить" Width="80" Height="25" Click="AuthEmployeeButton_Click"></Button>
+            </UniformGrid>-->
         </StackPanel>
     </Grid>
 </Page>

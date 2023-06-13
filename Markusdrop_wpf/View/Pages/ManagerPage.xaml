@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Markusdrop_wpf.View.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="750" d:DesignWidth="800"
+      d:DesignHeight="850" d:DesignWidth="800"
       Title="ManagerPage">
 <!---->
     <Grid>
@@ -27,7 +27,7 @@
                         <DataGridTextColumn Header="Задачи" Binding="{Binding task_id}" Width="168">
 
                         </DataGridTextColumn>
-                        <DataGridTextColumn Header="Выполнено" Width="90">
+                        <DataGridTextColumn Header="Выполнено" x:Name="TaskDeadlineDataGridTextColumn" Width="90">
 
                         </DataGridTextColumn>
                     </DataGrid.Columns>
@@ -39,7 +39,7 @@
                 <Button x:Name="TaskManagementButton" Content="управление задачами" FontSize="20" Height="50" Width="250" Click="TaskManagementButton_Click"></Button>
             </StackPanel>
             <StackPanel Margin="0, 40, 0, 0">
-                <Button x:Name="TaskGiveButton" Content="Дать задачу" FontSize="20" Height="50" Width="250" Click="TaskGiveButton_Click"></Button>
+                <Button x:Name="GiveEmployeeTaskButton" Content="Дать задачу" FontSize="20" Height="50" Width="250" Click="GiveEmployeeTaskButton_Click"></Button>
             </StackPanel>
         </StackPanel>
     </Grid>
