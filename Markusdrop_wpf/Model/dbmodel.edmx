@@ -58,7 +58,9 @@
           <Property Name="user_image" Type="image" />
         </EntityType>
         <Association Name="FK_employee_task_company_task">
-          <End Role="company_task" Type="Self.company_task" Multiplicity="0..1" />
+          <End Role="company_task" Type="Self.company_task" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="employee_task" Type="Self.employee_task" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="company_task">
@@ -70,7 +72,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_employee_task_employees">
-          <End Role="users" Type="Self.users" Multiplicity="0..1" />
+          <End Role="users" Type="Self.users" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="employee_task" Type="Self.employee_task" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -228,7 +232,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_employee_task_company_task">
-          <End Type="armmarkdbModel.company_task" Role="company_task" Multiplicity="0..1" />
+          <End Type="armmarkdbModel.company_task" Role="company_task" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="armmarkdbModel.employee_task" Role="employee_task" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="company_task">
@@ -240,7 +246,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_employee_task_employees">
-          <End Type="armmarkdbModel.users" Role="users" Multiplicity="0..1" />
+          <End Type="armmarkdbModel.users" Role="users" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="armmarkdbModel.employee_task" Role="employee_task" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
