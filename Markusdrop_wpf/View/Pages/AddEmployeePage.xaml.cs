@@ -49,18 +49,12 @@ namespace Markusdrop_wpf.View.Pages
                     INN = INNTextBox.Text,
                     SNILS = SNILSTextBox.Text,
                     email = EmailTextBox.Text,
+                    login = LoginTextBox.Text,
+                    password = PasswordBox.Password,
+                    user_role_fk = Convert.ToInt32(UserRoleComboBox.SelectedValue)
 
                 };
                 db.context.users.Add(us);
-                db.context.SaveChanges();
-                user_auth user = new user_auth()
-                {
-                    id_user = us.id_users,
-                    id_user_role_fk = Convert.ToInt32(UserRoleComboBox.SelectedValue),
-                    login = LoginTextBox.Text,
-                    password = PasswordBox.Password
-                };
-                db.context.user_auth.Add(user);
                 db.context.SaveChanges();
 
                 MessageBox.Show("Добавление выполнено успешно !",

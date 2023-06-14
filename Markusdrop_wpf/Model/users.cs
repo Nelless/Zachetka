@@ -17,7 +17,6 @@ namespace Markusdrop_wpf.Model
         public users()
         {
             this.employee_task = new HashSet<employee_task>();
-            this.user_auth = new HashSet<user_auth>();
         }
     
         public int id_users { get; set; }
@@ -31,9 +30,13 @@ namespace Markusdrop_wpf.Model
         public string SNILS { get; set; }
         public string email { get; set; }
         public Nullable<int> area_id_fk { get; set; }
+        public string login { get; set; }
+        public string password { get; set; }
+        public Nullable<int> user_role_fk { get; set; }
+        public byte[] user_image { get; set; }
     
         public virtual company_areas company_areas { get; set; }
         public virtual ICollection<employee_task> employee_task { get; set; }
-        public virtual ICollection<user_auth> user_auth { get; set; }
+        public virtual user_role user_role { get; set; }
     }
 }

@@ -28,7 +28,6 @@ namespace Markusdrop_wpf.Model
         public DbSet<company_areas> company_areas { get; set; }
         public DbSet<company_task> company_task { get; set; }
         public DbSet<employee_task> employee_task { get; set; }
-        public DbSet<user_auth> user_auth { get; set; }
         public DbSet<user_role> user_role { get; set; }
         public DbSet<users> users { get; set; }
     }

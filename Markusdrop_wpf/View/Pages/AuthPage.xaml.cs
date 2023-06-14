@@ -35,7 +35,7 @@ namespace Markusdrop_wpf.View.Pages
             {
 
                 //считаем количество записей в таблице с заданными параметрами (логин, пароль)
-                user_auth auth = db.context.user_auth.Where(
+                users auth = db.context.users.Where(
                 x => x.login == LoginTextBox.Text && x.password == PasswordTextBox.Password
                 ).FirstOrDefault();
 
@@ -51,7 +51,7 @@ namespace Markusdrop_wpf.View.Pages
 
                 {
 
-                    switch (auth.id_user_role_fk)
+                    switch (auth.user_role_fk)
                     {
 
                         case 1:

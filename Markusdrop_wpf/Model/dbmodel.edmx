@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище armmarkdbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище armmarkdbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="company_areas">
           <Key>
             <PropertyRef Name="id_area" />
@@ -17,8 +17,8 @@
             <PropertyRef Name="id_task" />
           </Key>
           <Property Name="id_task" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="task_name" Type="varchar" MaxLength="100" />
-          <Property Name="task_text" Type="varchar" MaxLength="500" />
+          <Property Name="task_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="task_text" Type="nvarchar" MaxLength="500" />
           <Property Name="task_startdate" Type="datetime" />
           <Property Name="task_enddate" Type="datetime" />
         </EntityType>
@@ -29,16 +29,6 @@
           <Property Name="id_employee_task" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="employee_id" Type="int" />
           <Property Name="task_id" Type="int" />
-        </EntityType>
-        <EntityType Name="user_auth">
-          <Key>
-            <PropertyRef Name="id_user_auth" />
-          </Key>
-          <Property Name="id_user_auth" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_user" Type="int" />
-          <Property Name="id_user_role_fk" Type="int" />
-          <Property Name="login" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="user_role">
           <Key>
@@ -62,6 +52,10 @@
           <Property Name="SNILS" Type="varchar" MaxLength="12" />
           <Property Name="email" Type="nvarchar" MaxLength="256" />
           <Property Name="area_id_fk" Type="int" />
+          <Property Name="login" Type="nvarchar" MaxLength="20" />
+          <Property Name="password" Type="nvarchar" MaxLength="20" />
+          <Property Name="user_role_fk" Type="int" />
+          <Property Name="user_image" Type="image" />
         </EntityType>
         <Association Name="FK_employee_task_company_task">
           <End Role="company_task" Type="Self.company_task" Multiplicity="0..1" />
@@ -99,27 +93,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_user_auth_user_role">
+        <Association Name="FK_users_user_role">
           <End Role="user_role" Type="Self.user_role" Multiplicity="0..1" />
-          <End Role="user_auth" Type="Self.user_auth" Multiplicity="*" />
+          <End Role="users" Type="Self.users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user_role">
               <PropertyRef Name="id_user_role" />
             </Principal>
-            <Dependent Role="user_auth">
-              <PropertyRef Name="id_user_role_fk" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_user_auth_users">
-          <End Role="users" Type="Self.users" Multiplicity="0..1" />
-          <End Role="user_auth" Type="Self.user_auth" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="id_users" />
-            </Principal>
-            <Dependent Role="user_auth">
-              <PropertyRef Name="id_user" />
+            <Dependent Role="users">
+              <PropertyRef Name="user_role_fk" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -127,7 +109,6 @@
           <EntitySet Name="company_areas" EntityType="Self.company_areas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="company_task" EntityType="Self.company_task" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="employee_task" EntityType="Self.employee_task" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="user_auth" EntityType="Self.user_auth" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user_role" EntityType="Self.user_role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_employee_task_company_task" Association="Self.FK_employee_task_company_task">
@@ -142,38 +123,56 @@
             <End Role="company_areas" EntitySet="company_areas" />
             <End Role="users" EntitySet="users" />
           </AssociationSet>
-          <AssociationSet Name="FK_user_auth_user_role" Association="Self.FK_user_auth_user_role">
+          <AssociationSet Name="FK_users_user_role" Association="Self.FK_users_user_role">
             <End Role="user_role" EntitySet="user_role" />
-            <End Role="user_auth" EntitySet="user_auth" />
-          </AssociationSet>
-          <AssociationSet Name="FK_user_auth_users" Association="Self.FK_user_auth_users">
             <End Role="users" EntitySet="users" />
-            <End Role="user_auth" EntitySet="user_auth" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="armmarkdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="armmarkdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="company_areas" EntityType="armmarkdbModel.company_areas" />
+          <EntitySet Name="company_task" EntityType="armmarkdbModel.company_task" />
+          <EntitySet Name="employee_task" EntityType="armmarkdbModel.employee_task" />
+          <EntitySet Name="user_role" EntityType="armmarkdbModel.user_role" />
+          <EntitySet Name="users" EntityType="armmarkdbModel.users" />
+          <AssociationSet Name="FK_employees_company_areas" Association="armmarkdbModel.FK_employees_company_areas">
+            <End Role="company_areas" EntitySet="company_areas" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_task_company_task" Association="armmarkdbModel.FK_employee_task_company_task">
+            <End Role="company_task" EntitySet="company_task" />
+            <End Role="employee_task" EntitySet="employee_task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_task_employees" Association="armmarkdbModel.FK_employee_task_employees">
+            <End Role="users" EntitySet="users" />
+            <End Role="employee_task" EntitySet="employee_task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_users_user_role" Association="armmarkdbModel.FK_users_user_role">
+            <End Role="user_role" EntitySet="user_role" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="company_areas">
           <Key>
             <PropertyRef Name="id_area" />
           </Key>
           <Property Name="id_area" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="area_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="users" Relationship="Self.FK_employees_company_areas" FromRole="company_areas" ToRole="users" />
+          <NavigationProperty Name="users" Relationship="armmarkdbModel.FK_employees_company_areas" FromRole="company_areas" ToRole="users" />
         </EntityType>
         <EntityType Name="company_task">
           <Key>
             <PropertyRef Name="id_task" />
           </Key>
           <Property Name="id_task" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="task_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="task_text" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="task_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="task_text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="task_startdate" Type="DateTime" Precision="3" />
           <Property Name="task_enddate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="employee_task" Relationship="Self.FK_employee_task_company_task" FromRole="company_task" ToRole="employee_task" />
+          <NavigationProperty Name="employee_task" Relationship="armmarkdbModel.FK_employee_task_company_task" FromRole="company_task" ToRole="employee_task" />
         </EntityType>
         <EntityType Name="employee_task">
           <Key>
@@ -182,20 +181,8 @@
           <Property Name="id_employee_task" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="employee_id" Type="Int32" />
           <Property Name="task_id" Type="Int32" />
-          <NavigationProperty Name="company_task" Relationship="Self.FK_employee_task_company_task" FromRole="employee_task" ToRole="company_task" />
-          <NavigationProperty Name="users" Relationship="Self.FK_employee_task_employees" FromRole="employee_task" ToRole="users" />
-        </EntityType>
-        <EntityType Name="user_auth">
-          <Key>
-            <PropertyRef Name="id_user_auth" />
-          </Key>
-          <Property Name="id_user_auth" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_user" Type="Int32" />
-          <Property Name="id_user_role_fk" Type="Int32" />
-          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="user_role" Relationship="Self.FK_user_auth_user_role" FromRole="user_auth" ToRole="user_role" />
-          <NavigationProperty Name="users" Relationship="Self.FK_user_auth_users" FromRole="user_auth" ToRole="users" />
+          <NavigationProperty Name="company_task" Relationship="armmarkdbModel.FK_employee_task_company_task" FromRole="employee_task" ToRole="company_task" />
+          <NavigationProperty Name="users" Relationship="armmarkdbModel.FK_employee_task_employees" FromRole="employee_task" ToRole="users" />
         </EntityType>
         <EntityType Name="user_role">
           <Key>
@@ -203,7 +190,7 @@
           </Key>
           <Property Name="id_user_role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="user_role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="user_auth" Relationship="Self.FK_user_auth_user_role" FromRole="user_role" ToRole="user_auth" />
+          <NavigationProperty Name="users" Relationship="armmarkdbModel.FK_users_user_role" FromRole="user_role" ToRole="users" />
         </EntityType>
         <EntityType Name="users">
           <Key>
@@ -220,13 +207,17 @@
           <Property Name="SNILS" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Name="area_id_fk" Type="Int32" />
-          <NavigationProperty Name="company_areas" Relationship="Self.FK_employees_company_areas" FromRole="users" ToRole="company_areas" />
-          <NavigationProperty Name="employee_task" Relationship="Self.FK_employee_task_employees" FromRole="users" ToRole="employee_task" />
-          <NavigationProperty Name="user_auth" Relationship="Self.FK_user_auth_users" FromRole="users" ToRole="user_auth" />
+          <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="user_role_fk" Type="Int32" />
+          <Property Name="user_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="company_areas" Relationship="armmarkdbModel.FK_employees_company_areas" FromRole="users" ToRole="company_areas" />
+          <NavigationProperty Name="employee_task" Relationship="armmarkdbModel.FK_employee_task_employees" FromRole="users" ToRole="employee_task" />
+          <NavigationProperty Name="user_role" Relationship="armmarkdbModel.FK_users_user_role" FromRole="users" ToRole="user_role" />
         </EntityType>
         <Association Name="FK_employees_company_areas">
-          <End Role="company_areas" Type="Self.company_areas" Multiplicity="0..1" />
-          <End Role="users" Type="Self.users" Multiplicity="*" />
+          <End Type="armmarkdbModel.company_areas" Role="company_areas" Multiplicity="0..1" />
+          <End Type="armmarkdbModel.users" Role="users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="company_areas">
               <PropertyRef Name="id_area" />
@@ -237,8 +228,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_employee_task_company_task">
-          <End Role="company_task" Type="Self.company_task" Multiplicity="0..1" />
-          <End Role="employee_task" Type="Self.employee_task" Multiplicity="*" />
+          <End Type="armmarkdbModel.company_task" Role="company_task" Multiplicity="0..1" />
+          <End Type="armmarkdbModel.employee_task" Role="employee_task" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="company_task">
               <PropertyRef Name="id_task" />
@@ -249,8 +240,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_employee_task_employees">
-          <End Role="users" Type="Self.users" Multiplicity="0..1" />
-          <End Role="employee_task" Type="Self.employee_task" Multiplicity="*" />
+          <End Type="armmarkdbModel.users" Role="users" Multiplicity="0..1" />
+          <End Type="armmarkdbModel.employee_task" Role="employee_task" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
               <PropertyRef Name="id_users" />
@@ -260,59 +251,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_user_auth_user_role">
-          <End Role="user_role" Type="Self.user_role" Multiplicity="0..1" />
-          <End Role="user_auth" Type="Self.user_auth" Multiplicity="*" />
+        <Association Name="FK_users_user_role">
+          <End Type="armmarkdbModel.user_role" Role="user_role" Multiplicity="0..1" />
+          <End Type="armmarkdbModel.users" Role="users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user_role">
               <PropertyRef Name="id_user_role" />
             </Principal>
-            <Dependent Role="user_auth">
-              <PropertyRef Name="id_user_role_fk" />
+            <Dependent Role="users">
+              <PropertyRef Name="user_role_fk" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_user_auth_users">
-          <End Role="users" Type="Self.users" Multiplicity="0..1" />
-          <End Role="user_auth" Type="Self.user_auth" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="id_users" />
-            </Principal>
-            <Dependent Role="user_auth">
-              <PropertyRef Name="id_user" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="armmarkdbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="company_areas" EntityType="Self.company_areas" />
-          <EntitySet Name="company_task" EntityType="Self.company_task" />
-          <EntitySet Name="employee_task" EntityType="Self.employee_task" />
-          <EntitySet Name="user_auth" EntityType="Self.user_auth" />
-          <EntitySet Name="user_role" EntityType="Self.user_role" />
-          <EntitySet Name="users" EntityType="Self.users" />
-          <AssociationSet Name="FK_employees_company_areas" Association="Self.FK_employees_company_areas">
-            <End Role="company_areas" EntitySet="company_areas" />
-            <End Role="users" EntitySet="users" />
-          </AssociationSet>
-          <AssociationSet Name="FK_employee_task_company_task" Association="Self.FK_employee_task_company_task">
-            <End Role="company_task" EntitySet="company_task" />
-            <End Role="employee_task" EntitySet="employee_task" />
-          </AssociationSet>
-          <AssociationSet Name="FK_employee_task_employees" Association="Self.FK_employee_task_employees">
-            <End Role="users" EntitySet="users" />
-            <End Role="employee_task" EntitySet="employee_task" />
-          </AssociationSet>
-          <AssociationSet Name="FK_user_auth_user_role" Association="Self.FK_user_auth_user_role">
-            <End Role="user_role" EntitySet="user_role" />
-            <End Role="user_auth" EntitySet="user_auth" />
-          </AssociationSet>
-          <AssociationSet Name="FK_user_auth_users" Association="Self.FK_user_auth_users">
-            <End Role="users" EntitySet="users" />
-            <End Role="user_auth" EntitySet="user_auth" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -321,64 +272,57 @@
           <EntitySetMapping Name="company_areas">
             <EntityTypeMapping TypeName="armmarkdbModel.company_areas">
               <MappingFragment StoreEntitySet="company_areas">
-                <ScalarProperty Name="id_area" ColumnName="id_area" />
                 <ScalarProperty Name="area_name" ColumnName="area_name" />
+                <ScalarProperty Name="id_area" ColumnName="id_area" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="company_task">
             <EntityTypeMapping TypeName="armmarkdbModel.company_task">
               <MappingFragment StoreEntitySet="company_task">
-                <ScalarProperty Name="id_task" ColumnName="id_task" />
-                <ScalarProperty Name="task_name" ColumnName="task_name" />
-                <ScalarProperty Name="task_text" ColumnName="task_text" />
-                <ScalarProperty Name="task_startdate" ColumnName="task_startdate" />
                 <ScalarProperty Name="task_enddate" ColumnName="task_enddate" />
+                <ScalarProperty Name="task_startdate" ColumnName="task_startdate" />
+                <ScalarProperty Name="task_text" ColumnName="task_text" />
+                <ScalarProperty Name="task_name" ColumnName="task_name" />
+                <ScalarProperty Name="id_task" ColumnName="id_task" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="employee_task">
             <EntityTypeMapping TypeName="armmarkdbModel.employee_task">
               <MappingFragment StoreEntitySet="employee_task">
-                <ScalarProperty Name="id_employee_task" ColumnName="id_employee_task" />
-                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
                 <ScalarProperty Name="task_id" ColumnName="task_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="user_auth">
-            <EntityTypeMapping TypeName="armmarkdbModel.user_auth">
-              <MappingFragment StoreEntitySet="user_auth">
-                <ScalarProperty Name="id_user_auth" ColumnName="id_user_auth" />
-                <ScalarProperty Name="id_user" ColumnName="id_user" />
-                <ScalarProperty Name="id_user_role_fk" ColumnName="id_user_role_fk" />
-                <ScalarProperty Name="login" ColumnName="login" />
-                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="id_employee_task" ColumnName="id_employee_task" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="user_role">
             <EntityTypeMapping TypeName="armmarkdbModel.user_role">
               <MappingFragment StoreEntitySet="user_role">
-                <ScalarProperty Name="id_user_role" ColumnName="id_user_role" />
                 <ScalarProperty Name="user_role_name" ColumnName="user_role_name" />
+                <ScalarProperty Name="id_user_role" ColumnName="id_user_role" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="users">
             <EntityTypeMapping TypeName="armmarkdbModel.users">
               <MappingFragment StoreEntitySet="users">
-                <ScalarProperty Name="id_users" ColumnName="id_users" />
-                <ScalarProperty Name="first_name" ColumnName="first_name" />
-                <ScalarProperty Name="last_name" ColumnName="last_name" />
-                <ScalarProperty Name="patronimyc" ColumnName="patronimyc" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="passport_code" ColumnName="passport_code" />
-                <ScalarProperty Name="passport_number" ColumnName="passport_number" />
-                <ScalarProperty Name="INN" ColumnName="INN" />
-                <ScalarProperty Name="SNILS" ColumnName="SNILS" />
-                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="user_image" ColumnName="user_image" />
+                <ScalarProperty Name="user_role_fk" ColumnName="user_role_fk" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="area_id_fk" ColumnName="area_id_fk" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="SNILS" ColumnName="SNILS" />
+                <ScalarProperty Name="INN" ColumnName="INN" />
+                <ScalarProperty Name="passport_number" ColumnName="passport_number" />
+                <ScalarProperty Name="passport_code" ColumnName="passport_code" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="patronimyc" ColumnName="patronimyc" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="id_users" ColumnName="id_users" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

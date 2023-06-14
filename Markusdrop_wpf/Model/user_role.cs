@@ -16,12 +16,12 @@ namespace Markusdrop_wpf.Model
     {
         public user_role()
         {
-            this.user_auth = new HashSet<user_auth>();
+            this.users = new HashSet<users>();
         }
     
         public int id_user_role { get; set; }
         public string user_role_name { get; set; }
     
-        public virtual ICollection<user_auth> user_auth { get; set; }
+        public virtual ICollection<users> users { get; set; }
     }
 }
