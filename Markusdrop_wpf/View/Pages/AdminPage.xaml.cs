@@ -40,6 +40,11 @@ namespace Markusdrop_wpf.View.Pages
             this.NavigationService.Navigate(new EditEmployeeInfoPage());
         }
 
+        private void RemoveEmployeeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new RemoveEmployeePage());
+        }
+
         private void EmployeeCountRewiewButton_Click(object sender, RoutedEventArgs e)
         {
             

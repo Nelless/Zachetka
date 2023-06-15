@@ -31,14 +31,24 @@ namespace Markusdrop_wpf.View.Pages
            
         }
 
-        private void TaskManagementButton_Click(object sender, RoutedEventArgs e)
+        private void TaskCreateButton_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new TaskManagementPage());
+            this.NavigationService.Navigate(new TaskCreatePage());
         }
 
         private void GiveEmployeeTaskButton_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new GiveTaskPage());
+        }
+
+        private void TaskEditButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new TaskEditPage());
+        }
+
+        private void TaskDeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new TaskDeletePage());
         }
     }
 }

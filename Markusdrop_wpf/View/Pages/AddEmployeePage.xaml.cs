@@ -28,10 +28,6 @@ namespace Markusdrop_wpf.View.Pages
             UserRoleComboBox.ItemsSource = db.context.user_role.ToList();
             UserRoleComboBox.DisplayMemberPath = "user_role_name";
             UserRoleComboBox.SelectedValuePath = "id_user_role";
-
-            DeleteEmployeeComboBox.ItemsSource = db.context.users.ToList();
-            DeleteEmployeeComboBox.SelectedValuePath = "id_users";
-            DeleteEmployeeComboBox.DisplayMemberPath = "FLP";
         }
 
         private void AuthEmployeeButton_Click(object sender, RoutedEventArgs e)
@@ -73,28 +69,6 @@ namespace Markusdrop_wpf.View.Pages
             if (NavigationService.CanGoBack)
             {
                 NavigationService.GoBack();
-            }
-        }
-
-        private void DeleteEmployeeButton_Click(object sender, RoutedEventArgs e)
-        {
-            var delete = DeleteEmployeeComboBox.SelectedItem as users;
-            if (DeleteEmployeeComboBox.SelectedValue != null)
-            {
-                MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите удалить пользователя?", "Удаление", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
-                if (result == MessageBoxResult.Yes)
-                {
-                    db.context.users.Remove(delete);
-                    db.context.SaveChanges();
-                    MessageBox.Show("Удаление выполнено успешно !",
-                    "Уведомление",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
-                }
-            }
-            else
-            {
-                MessageBox.Show("пожалуйста, выберете задачу для удаления", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
     }

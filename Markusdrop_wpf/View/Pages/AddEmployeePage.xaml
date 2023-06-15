@@ -9,38 +9,46 @@
       Title="AddEmployeePage">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Left" FontSize="20" Margin="80, 50, 0, 0">Добавление сотрудника</TextBlock>
-        <TextBlock HorizontalAlignment="Right" FontSize="20" Margin="0, 50, 80, 0">Добавление сотрудника</TextBlock>
+        <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0, 50, 0, 0">Добавление сотрудника</TextBlock>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12">
             <Button x:Name="AddEmployeeBackButton" Content="Назад" Width="80" Height="30" Click="AddEmployeeBackButton_Click"></Button>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Left" Margin="20, 200, 0, 0" Width="350">
+        <StackPanel HorizontalAlignment="Center" Margin="0, 200, 0, 0" Width="350">
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Имя</TextBlock><TextBox x:Name="FirstNameTextBox" Width="150"></TextBox>
+                <TextBlock>Имя</TextBlock>
+                <TextBox x:Name="FirstNameTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Фамилия</TextBlock><TextBox x:Name="LastNameTextBox" Width="150"></TextBox>
+                <TextBlock>Фамилия</TextBlock>
+                <TextBox x:Name="LastNameTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Отчество</TextBlock><TextBox x:Name="PatronymicTextBox" Width="150"></TextBox>
+                <TextBlock>Отчество</TextBlock>
+                <TextBox x:Name="PatronymicTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Телефон</TextBlock><TextBox x:Name="PhoneTextBox" Width="150"></TextBox>
+                <TextBlock>Телефон</TextBlock>
+                <TextBox x:Name="PhoneTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Код паспорта</TextBlock><TextBox x:Name="PassportCodeTextBox" Width="150"></TextBox>
+                <TextBlock>Код паспорта</TextBlock>
+                <TextBox x:Name="PassportCodeTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Номер паспорта</TextBlock><TextBox x:Name="PassportNumberTextBox" Width="150"></TextBox>
+                <TextBlock>Номер паспорта</TextBlock>
+                <TextBox x:Name="PassportNumberTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>ИНН</TextBlock><TextBox x:Name="INNTextBox" Width="150"></TextBox>
+                <TextBlock>ИНН</TextBlock>
+                <TextBox x:Name="INNTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>СНИЛС</TextBlock><TextBox x:Name="SNILSTextBox" Width="150"></TextBox>
+                <TextBlock>СНИЛС</TextBlock>
+                <TextBox x:Name="SNILSTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Email</TextBlock><TextBox x:Name="EmailTextBox" Width="150"></TextBox>
+                <TextBlock>Email</TextBlock>
+                <TextBox x:Name="EmailTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center" Margin="10">
                 <TextBlock>Роль:</TextBlock>
@@ -57,24 +65,6 @@
             <UniformGrid HorizontalAlignment="Center" Margin="10">
                 <Button x:Name="AuthEmployeeButton" Content="Добавить" Width="80" Height="25" Click="AuthEmployeeButton_Click"></Button>
             </UniformGrid>
-        </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="250, 200, 0, 0">
-            <!--<UniformGrid>
-                <TextBlock Margin="0, 0, 40, 0">Установить логин</TextBlock>
-                <TextBox x:Name="LoginTextBox"></TextBox>
-            </UniformGrid>
-            <UniformGrid>
-                <TextBlock Margin="0, 0, 40, 0">Установить пароль</TextBlock><PasswordBox x:Name="PasswordBox"></PasswordBox>
-            </UniformGrid>-->
-            <StackPanel Margin="0, 0, 0, 0">
-                <UniformGrid>
-                    <TextBlock Margin="0, 0, 40, 0">Удалить сотрудника</TextBlock>
-                    <ComboBox x:Name="DeleteEmployeeComboBox"></ComboBox>
-                </UniformGrid>
-                <UniformGrid HorizontalAlignment="Center" Margin="10">
-                    <Button x:Name="DeleteEmployeeButton" Content="Удалить" Width="80" Height="25" Click="DeleteEmployeeButton_Click"></Button>
-                </UniformGrid>
-            </StackPanel>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <!--<UniformGrid HorizontalAlignment="Center" Margin="10">

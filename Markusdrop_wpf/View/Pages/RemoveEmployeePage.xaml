@@ -1,0 +1,26 @@
+﻿<Page x:Class="Markusdrop_wpf.View.Pages.RemoveEmployeePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Markusdrop_wpf.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="800"
+      Title="RemoveEmployeePage">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0, 50, 0, 0">Удаление сотрудника</TextBlock>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12">
+            <Button x:Name="RemoveEmployeeBackButton" Content="Назад" Width="80" Height="30" Click="RemoveEmployeeBackButton_Click"></Button>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 350, 0, 0">
+            <UniformGrid>
+                <TextBlock Margin="0, 0, 40, 0">Выбрать сотрудника</TextBlock>
+                <ComboBox x:Name="DeleteEmployeeComboBox"></ComboBox>
+            </UniformGrid>
+            <UniformGrid HorizontalAlignment="Center" Margin="10">
+                <Button x:Name="RemoveEmployeeButton" Content="Удалить" Width="80" Height="25" Click="RemoveEmployeeButton_Click"></Button>
+            </UniformGrid>
+        </StackPanel>
+    </Grid>
+</Page>

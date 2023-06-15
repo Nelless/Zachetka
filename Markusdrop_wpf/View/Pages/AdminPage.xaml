@@ -16,7 +16,7 @@
             <StackPanel HorizontalAlignment="Center" Width="227">
                 <StackPanel>
                     <Button x:Name="AddEmployeeButton" Width="200" Height="100" Margin="0, 20, 0, 20" Click="AddEmployeeButton_Click">
-                        <TextBlock TextAlignment="Center">Добавление/удаление <LineBreak/> и регистрация сотрудника</TextBlock>
+                        <TextBlock TextAlignment="Center">Добавление и регистрация <LineBreak/> сотрудника</TextBlock>
                     </Button>
                 </StackPanel>
                 <StackPanel>
@@ -25,15 +25,22 @@
                     </Button>
                 </StackPanel>
                 <StackPanel>
+                    <Button x:Name="RemoveEmployeeButton" Width="200" Height="100" Margin="0, 20, 0, 20" Click="RemoveEmployeeButton_Click">
+                        <TextBlock TextAlignment="Center">Удаление сотрудника</TextBlock>
+                    </Button>
+                </StackPanel>
+                <StackPanel>
                     <Button x:Name="AreaEmployeeButton" Width="200" Height="100" Margin="0, 20, 0, 20" Click="AreaEmployeeButton_Click">
                         <TextBlock TextAlignment="Center">Прикрепить сотрудника <LineBreak/> к подразделению</TextBlock>
                     </Button>
                 </StackPanel>
-                <StackPanel>
-                    <Button x:Name="EmployeeCountRewiewButton" Width="200" Height="100" Margin="0, 200, 0, 20" Click="EmployeeCountRewiewButton_Click">
-                        <TextBlock TextAlignment="Center">Составить отчет <LineBreak/> о количестве сотрудниках <LineBreak/> в Excel</TextBlock>
-                    </Button>
-                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0, 0, 20, 20">
+            <StackPanel>
+                <Button x:Name="EmployeeCountRewiewButton" Width="200" Height="100" Click="EmployeeCountRewiewButton_Click">
+                    <TextBlock TextAlignment="Center">Составить отчет <LineBreak/> о количестве сотрудниках <LineBreak/> в Excel</TextBlock>
+                </Button>
             </StackPanel>
         </StackPanel>
     </Grid>
