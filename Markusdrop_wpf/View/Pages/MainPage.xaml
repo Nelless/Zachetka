@@ -9,6 +9,28 @@
       Title="MainPage">
 
     <Grid>
-        
+        <Grid>
+            <StackPanel>
+                <StackPanel>
+                    <Image x:Name="EmployeeImage">
+                        
+                    </Image>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock x:Name="EmployeeAreaTextblock"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <StackPanel>
+                    <TextBlock x:Name="EmployeeFirstNameTextblock"></TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock x:Name="EmployeeLastNameTextblock"></TextBlock>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock x:Name="EmployeePatronymicTextblock"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
