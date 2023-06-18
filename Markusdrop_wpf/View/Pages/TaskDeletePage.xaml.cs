@@ -25,18 +25,20 @@ namespace Markusdrop_wpf.View.Pages
         public TaskDeletePage()
         {
             InitializeComponent();
+            NavigationService.Refresh();
         }
 
         private void TaskDeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            var delete = TaskDeleteCombobox.SelectedItem as company_task;
+            var delete = TaskDeleteCombobox.SelectedItem as employee_task;
             if (TaskDeleteCombobox.SelectedValue != null)
             {
                 MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите удалить строку?", "Удаление", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
-                    db.context.company_task.Remove(delete);
+                    db.context.employee_task.Remove(delete);
                     db.context.SaveChanges();
+                    NavigationService.Refresh();
                     MessageBox.Show("Удаление выполнено успешно !",
                     "Уведомление",
                     MessageBoxButton.OK,

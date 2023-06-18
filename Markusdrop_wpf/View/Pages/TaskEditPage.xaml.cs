@@ -47,6 +47,7 @@ namespace Markusdrop_wpf.View.Pages
                 "Уведомление",
                 MessageBoxButton.OK,
                 MessageBoxImage.Information);
+                NavigationService.Refresh();
             }
             else
             {

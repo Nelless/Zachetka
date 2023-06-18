@@ -25,6 +25,7 @@ namespace Markusdrop_wpf.View.Pages
         public ManagerPage()
         {
             InitializeComponent();
+            NavigationService.Refresh();
            
 
             EmployeesTasksDataGrid.ItemsSource = db.context.employee_task.ToList();

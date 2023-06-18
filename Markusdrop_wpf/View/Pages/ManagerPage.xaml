@@ -42,10 +42,10 @@
                 <Button x:Name="TaskEditButton" Content="Редактирование задачи" FontSize="20" Height="50" Width="250" Click="TaskEditButton_Click"></Button>
             </StackPanel>
             <StackPanel Margin="0, 40, 0, 0">
-                <Button x:Name="TaskDeleteButton" Content="Удаление задачи" FontSize="20" Height="50" Width="250" Click="TaskDeleteButton_Click"></Button>
+                <Button x:Name="GiveEmployeeTaskButton" Content="Выдать задачу" FontSize="20" Height="50" Width="250" Click="GiveEmployeeTaskButton_Click"></Button>
             </StackPanel>
             <StackPanel Margin="0, 40, 0, 0">
-                <Button x:Name="GiveEmployeeTaskButton" Content="Выдать задачу" FontSize="20" Height="50" Width="250" Click="GiveEmployeeTaskButton_Click"></Button>
+                <Button x:Name="TaskDeleteButton" Content="Снять задачу" FontSize="20" Height="50" Width="250" Click="TaskDeleteButton_Click"></Button>
             </StackPanel>
         </StackPanel>
     </Grid>

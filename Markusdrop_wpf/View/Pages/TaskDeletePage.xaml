@@ -14,18 +14,20 @@
         </StackPanel>
         <Grid HorizontalAlignment="Center">
             <TextBlock FontSize="25" Margin="10, 40, 10, 0">
-                Удаление задачи
+                Снятие задачи
             </TextBlock>
-            <StackPanel Margin="0, 300, 0, 0">
-                <StackPanel HorizontalAlignment="Center">
-                    <TextBlock>Выбрать задачу:</TextBlock>
+            <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Margin="20">
+                    <TextBlock Margin="0, 0, 20, 0">Выбрать сотрудника:</TextBlock>
+                    <ComboBox x:Name="employeeTaskDeleteCombobox" Width="160"></ComboBox>
                 </StackPanel>
-                <StackPanel Margin="0, 20, 0, 0">
+                <StackPanel Orientation="Horizontal" Margin="20">
+                    <TextBlock Margin="0, 0, 20, 0">Выбрать задачу:</TextBlock>
                     <ComboBox x:Name="TaskDeleteCombobox" Width="160"></ComboBox>
                 </StackPanel>
-                <StackPanel Margin="0, 20, 0, 0">
-                    <Button x:Name="TaskDeleteButton" Content="Удалить" Width="100" Click="TaskDeleteButton_Click"></Button>
-                </StackPanel>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom" Margin="0, 0, 0, 40">
+                <Button x:Name="TaskDeleteButton" Content="Удалить" Width="100" Click="TaskDeleteButton_Click"></Button>
             </StackPanel>
         </Grid>
     </Grid>
