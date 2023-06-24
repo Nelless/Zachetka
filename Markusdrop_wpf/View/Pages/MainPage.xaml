@@ -11,11 +11,11 @@
     <Grid>
         <Grid>
             <StackPanel>
-                <StackPanel>
+                <!--<StackPanel>
                     <Image x:Name="EmployeeImage">
                         
                     </Image>
-                </StackPanel>
+                </StackPanel>-->
                 <StackPanel>
                     <TextBlock x:Name="EmployeeAreaTextblock"></TextBlock>
                 </StackPanel>

@@ -48,8 +48,8 @@ namespace Markusdrop_wpf.View.Pages
             {
                 employee_task epltsk = new employee_task()
                 {
-                    employee_id = Convert.ToInt32(GiveEmployeeTaskCombobox.SelectedValue),
-                    task_id = Convert.ToInt32(TaskListCombobox.SelectedValue)
+                    id_employee_fk = Convert.ToInt32(GiveEmployeeTaskCombobox.SelectedValue),
+                    id_task_fk = Convert.ToInt32(TaskListCombobox.SelectedValue)
                 };
                 db.context.employee_task.Add(epltsk);
                 db.context.SaveChanges();

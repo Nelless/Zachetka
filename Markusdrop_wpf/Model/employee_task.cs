@@ -15,8 +15,9 @@ namespace Markusdrop_wpf.Model
     public partial class employee_task
     {
         public int id_employee_task { get; set; }
-        public Nullable<int> employee_id { get; set; }
-        public Nullable<int> task_id { get; set; }
+        public Nullable<int> id_employee_fk { get; set; }
+        public Nullable<int> id_task_fk { get; set; }
+        public Nullable<System.DateTime> task_completedate { get; set; }
     
         public virtual company_task company_task { get; set; }
         public virtual users users { get; set; }

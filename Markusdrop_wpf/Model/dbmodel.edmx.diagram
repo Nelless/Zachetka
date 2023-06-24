@@ -5,14 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a087f0b12ae0479f946e29b5a8d534cf" Name="Diagram1">
-        <EntityTypeShape EntityType="armmarkdbModel.company_areas" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="armmarkdbModel.company_areas" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="armmarkdbModel.company_task" Width="1.5" PointX="3" PointY="8.5" />
         <EntityTypeShape EntityType="armmarkdbModel.employee_task" Width="1.5" PointX="5.25" PointY="3.5" />
-        <EntityTypeShape EntityType="armmarkdbModel.user_role" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="armmarkdbModel.user_role" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="armmarkdbModel.users" Width="1.5" PointX="3" PointY="2.25" />
         <AssociationConnector Association="armmarkdbModel.FK_employees_company_areas" />
         <AssociationConnector Association="armmarkdbModel.FK_employee_task_company_task" />
-        <AssociationConnector Association="armmarkdbModel.FK_employee_task_employees" />
+        <AssociationConnector Association="armmarkdbModel.FK_employee_task_users" />
         <AssociationConnector Association="armmarkdbModel.FK_users_user_role" />
       </Diagram>
     </edmx:Diagrams>

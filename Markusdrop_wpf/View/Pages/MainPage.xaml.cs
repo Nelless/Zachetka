@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Markusdrop_wpf.Model;
 
 namespace Markusdrop_wpf.View.Pages
 {
@@ -20,9 +21,11 @@ namespace Markusdrop_wpf.View.Pages
     /// </summary>
     public partial class MainPage : Page
     {
+        Core db = new Core();
         public MainPage()
         {
             InitializeComponent();
+            AuthPage authPage = new AuthPage();
         }
     }
 }

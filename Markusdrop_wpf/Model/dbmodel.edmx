@@ -26,9 +26,10 @@
           <Key>
             <PropertyRef Name="id_employee_task" />
           </Key>
-          <Property Name="id_employee_task" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="employee_id" Type="int" />
-          <Property Name="task_id" Type="int" />
+          <Property Name="id_employee_task" Type="int" Nullable="false" />
+          <Property Name="id_employee_fk" Type="int" />
+          <Property Name="id_task_fk" Type="int" />
+          <Property Name="task_completedate" Type="datetime" />
         </EntityType>
         <EntityType Name="user_role">
           <Key>
@@ -67,21 +68,19 @@
               <PropertyRef Name="id_task" />
             </Principal>
             <Dependent Role="employee_task">
-              <PropertyRef Name="task_id" />
+              <PropertyRef Name="id_task_fk" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_employee_task_employees">
-          <End Role="users" Type="Self.users" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+        <Association Name="FK_employee_task_users">
+          <End Role="users" Type="Self.users" Multiplicity="0..1" />
           <End Role="employee_task" Type="Self.employee_task" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
               <PropertyRef Name="id_users" />
             </Principal>
             <Dependent Role="employee_task">
-              <PropertyRef Name="employee_id" />
+              <PropertyRef Name="id_employee_fk" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -119,7 +118,7 @@
             <End Role="company_task" EntitySet="company_task" />
             <End Role="employee_task" EntitySet="employee_task" />
           </AssociationSet>
-          <AssociationSet Name="FK_employee_task_employees" Association="Self.FK_employee_task_employees">
+          <AssociationSet Name="FK_employee_task_users" Association="Self.FK_employee_task_users">
             <End Role="users" EntitySet="users" />
             <End Role="employee_task" EntitySet="employee_task" />
           </AssociationSet>
@@ -150,7 +149,7 @@
             <End Role="company_task" EntitySet="company_task" />
             <End Role="employee_task" EntitySet="employee_task" />
           </AssociationSet>
-          <AssociationSet Name="FK_employee_task_employees" Association="armmarkdbModel.FK_employee_task_employees">
+          <AssociationSet Name="FK_employee_task_users" Association="armmarkdbModel.FK_employee_task_users">
             <End Role="users" EntitySet="users" />
             <End Role="employee_task" EntitySet="employee_task" />
           </AssociationSet>
@@ -182,11 +181,12 @@
           <Key>
             <PropertyRef Name="id_employee_task" />
           </Key>
-          <Property Name="id_employee_task" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="employee_id" Type="Int32" />
-          <Property Name="task_id" Type="Int32" />
+          <Property Name="id_employee_task" Type="Int32" Nullable="false" />
+          <Property Name="id_employee_fk" Type="Int32" />
+          <Property Name="id_task_fk" Type="Int32" />
+          <Property Name="task_completedate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="company_task" Relationship="armmarkdbModel.FK_employee_task_company_task" FromRole="employee_task" ToRole="company_task" />
-          <NavigationProperty Name="users" Relationship="armmarkdbModel.FK_employee_task_employees" FromRole="employee_task" ToRole="users" />
+          <NavigationProperty Name="users" Relationship="armmarkdbModel.FK_employee_task_users" FromRole="employee_task" ToRole="users" />
         </EntityType>
         <EntityType Name="user_role">
           <Key>
@@ -216,7 +216,7 @@
           <Property Name="user_role_fk" Type="Int32" />
           <Property Name="user_image" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="company_areas" Relationship="armmarkdbModel.FK_employees_company_areas" FromRole="users" ToRole="company_areas" />
-          <NavigationProperty Name="employee_task" Relationship="armmarkdbModel.FK_employee_task_employees" FromRole="users" ToRole="employee_task" />
+          <NavigationProperty Name="employee_task" Relationship="armmarkdbModel.FK_employee_task_users" FromRole="users" ToRole="employee_task" />
           <NavigationProperty Name="user_role" Relationship="armmarkdbModel.FK_users_user_role" FromRole="users" ToRole="user_role" />
         </EntityType>
         <Association Name="FK_employees_company_areas">
@@ -241,21 +241,19 @@
               <PropertyRef Name="id_task" />
             </Principal>
             <Dependent Role="employee_task">
-              <PropertyRef Name="task_id" />
+              <PropertyRef Name="id_task_fk" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_employee_task_employees">
-          <End Type="armmarkdbModel.users" Role="users" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+        <Association Name="FK_employee_task_users">
+          <End Type="armmarkdbModel.users" Role="users" Multiplicity="0..1" />
           <End Type="armmarkdbModel.employee_task" Role="employee_task" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
               <PropertyRef Name="id_users" />
             </Principal>
             <Dependent Role="employee_task">
-              <PropertyRef Name="employee_id" />
+              <PropertyRef Name="id_employee_fk" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -299,8 +297,9 @@
           <EntitySetMapping Name="employee_task">
             <EntityTypeMapping TypeName="armmarkdbModel.employee_task">
               <MappingFragment StoreEntitySet="employee_task">
-                <ScalarProperty Name="task_id" ColumnName="task_id" />
-                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="task_completedate" ColumnName="task_completedate" />
+                <ScalarProperty Name="id_task_fk" ColumnName="id_task_fk" />
+                <ScalarProperty Name="id_employee_fk" ColumnName="id_employee_fk" />
                 <ScalarProperty Name="id_employee_task" ColumnName="id_employee_task" />
               </MappingFragment>
             </EntityTypeMapping>

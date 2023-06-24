@@ -43,6 +43,14 @@
                     <TextBlock Width="100">Email</TextBlock>
                     <TextBox x:Name="BeforeEmailTextBlock" Text="{Binding email}" Margin="0, 0, 0, 10" Width="175"></TextBox>
                 </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="100">Логин</TextBlock>
+                    <TextBox x:Name="BeforeLoginTextBlock" Text="{Binding login}" Margin="0, 0, 0, 10" Width="175"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Width="100">Пароль</TextBlock>
+                    <TextBox x:Name="BeforePasswordTextBlock" Text="{Binding password}" Margin="0, 0, 0, 10" Width="175"></TextBox>
+                </StackPanel>
             </StackPanel>
         </UniformGrid>
         <UniformGrid HorizontalAlignment="Left" Margin="20, 220 ,0 ,0" Width="340">
