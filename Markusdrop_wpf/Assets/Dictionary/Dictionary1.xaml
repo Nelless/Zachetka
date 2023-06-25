@@ -2,7 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Markusdrop_wpf.Assets.Dictionary">
     <SolidColorBrush x:Key="AverageButtonBrush" Color="LightCyan"></SolidColorBrush>
-    <SolidColorBrush x:Key="AuthButtonBrush" Color="Cyan"></SolidColorBrush>
     <SolidColorBrush x:Key="AcceptButtonBrush" Color="SteelBlue"></SolidColorBrush>
     <SolidColorBrush x:Key="BlockBrush" Color="LightSkyBlue"></SolidColorBrush>
     <LinearGradientBrush x:Key="backgroundbrush">
