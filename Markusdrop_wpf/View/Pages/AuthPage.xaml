@@ -23,7 +23,7 @@
                 <PasswordBox x:Name="PasswordTextBox"></PasswordBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center" Width="200" Margin="15">
-                <Button Background="{StaticResource AverageButtonBrush}" x:Name="AuthButton" Click="AuthButton_Click" Content="Войти"></Button>
+                <Button Background="{StaticResource AcceptButtonBrush}" x:Name="AuthButton" Click="AuthButton_Click" Content="Войти"></Button>
             </UniformGrid>
         </StackPanel>
     </Grid>
