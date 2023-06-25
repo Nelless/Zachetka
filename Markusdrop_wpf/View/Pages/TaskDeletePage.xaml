@@ -10,7 +10,7 @@
 
     <Grid Background="{StaticResource backgroundbrush}">
         <StackPanel HorizontalAlignment="Right">
-            <Button x:Name="TaskDeleteBackButton" Content="Назад" Width="100" Height="30" Click="TaskDeleteBackButton_Click" Margin="0, 10, 10, 0"></Button>
+            <Button Background="{StaticResource AverageButtonBrush}" x:Name="TaskDeleteBackButton" Content="Назад" Width="100" Height="30" Click="TaskDeleteBackButton_Click" Margin="0, 10, 10, 0"></Button>
         </StackPanel>
         <TextBlock FontSize="25" HorizontalAlignment="Center">
                 Снятие задачи
@@ -24,7 +24,7 @@
             </StackPanel>
         </Grid>
         <StackPanel VerticalAlignment="Bottom" Margin="0, 0, 0, 40">
-            <Button x:Name="TaskDeleteButton" Content="Удалить" Width="100" Click="TaskDeleteButton_Click"></Button>
+            <Button Background="{StaticResource AcceptButtonBrush}" x:Name="TaskDeleteButton" Content="Удалить" Width="100" Click="TaskDeleteButton_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>
