@@ -25,7 +25,21 @@ namespace Markusdrop_wpf.View.Pages
         public MainPage()
         {
             InitializeComponent();
-            AuthPage authPage = new AuthPage();
+            //AuthPage auth = new AuthPage();
+            //users userauth = db.context.users.Where(
+            //    x => x.login == auth.LoginTextBox.Text && x.password == auth.PasswordTextBox.Password
+            //    ).FirstOrDefault();
+            //if ( userauth == null)
+            //{
+            //    MessageBox.Show("Такой пользователь отсутствует!",
+            //        "Уведомление",
+            //        MessageBoxButton.OK,
+            //        MessageBoxImage.Information);
+            //}
+            //else
+            //{
+            //    EmployeeFirstNameTextblock.Text
+            //}
         }
     }
 }

@@ -7,8 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="850" d:DesignWidth="800"
       Title="ManagerPage">
-<!---->
-    <Grid>
+    <Grid Background="{StaticResource backgroundbrush}">
         <StackPanel HorizontalAlignment="Left" Width="360" Margin="40, 0, 0, 0">
             <StackPanel Margin="0, 20, 0, 0">
                 <StackPanel>
@@ -36,16 +35,16 @@
         </StackPanel>
         <StackPanel HorizontalAlignment="Right" Width="360">
             <StackPanel Margin="0, 40, 0, 0">
-                <Button x:Name="TaskCreateButton" Content="Создание задачи" FontSize="20" Height="50" Width="250" Click="TaskCreateButton_Click"></Button>
+                <Button Background="{StaticResource AverageButtonBrush}" x:Name="TaskCreateButton" Content="Создание задачи" FontSize="20" Height="50" Width="250" Click="TaskCreateButton_Click"></Button>
             </StackPanel>
             <StackPanel Margin="0, 40, 0, 0">
-                <Button x:Name="TaskEditButton" Content="Редактирование задачи" FontSize="20" Height="50" Width="250" Click="TaskEditButton_Click"></Button>
+                <Button Background="{StaticResource AverageButtonBrush}" x:Name="TaskEditButton" Content="Редактирование задачи" FontSize="20" Height="50" Width="250" Click="TaskEditButton_Click"></Button>
             </StackPanel>
             <StackPanel Margin="0, 40, 0, 0">
-                <Button x:Name="GiveEmployeeTaskButton" Content="Выдать задачу" FontSize="20" Height="50" Width="250" Click="GiveEmployeeTaskButton_Click"></Button>
+                <Button Background="{StaticResource AverageButtonBrush}" x:Name="GiveEmployeeTaskButton" Content="Выдать задачу" FontSize="20" Height="50" Width="250" Click="GiveEmployeeTaskButton_Click"></Button>
             </StackPanel>
             <StackPanel Margin="0, 40, 0, 0">
-                <Button x:Name="TaskDeleteButton" Content="Снять задачу" FontSize="20" Height="50" Width="250" Click="TaskDeleteButton_Click"></Button>
+                <Button Background="{StaticResource AverageButtonBrush}" x:Name="TaskDeleteButton" Content="Снять задачу" FontSize="20" Height="50" Width="250" Click="TaskDeleteButton_Click"></Button>
             </StackPanel>
         </StackPanel>
     </Grid>

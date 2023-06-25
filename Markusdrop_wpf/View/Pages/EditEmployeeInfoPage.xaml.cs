@@ -39,6 +39,7 @@ namespace Markusdrop_wpf.View.Pages
                 "Уведомление",
                 MessageBoxButton.OK,
                 MessageBoxImage.Information);
+                this.NavigationService.Navigate(new AdminPage());
             }
 			else
 			{
@@ -58,10 +59,7 @@ namespace Markusdrop_wpf.View.Pages
 
         private void EditEmployeeBackButton_Click(object sender, RoutedEventArgs e)
         {
-            if (NavigationService.CanGoBack)
-            {
-                this.NavigationService.GoBack();
-            }
+            this.NavigationService.Navigate(new AdminPage());
         }
     }
 }

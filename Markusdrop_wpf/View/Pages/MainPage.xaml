@@ -8,27 +8,42 @@
       d:DesignHeight="850" d:DesignWidth="800"
       Title="MainPage">
 
-    <Grid>
-        <Grid>
-            <StackPanel>
-                <!--<StackPanel>
-                    <Image x:Name="EmployeeImage">
-                        
-                    </Image>
-                </StackPanel>-->
+    <Grid Background="{StaticResource backgroundbrush}">
+        <Grid Margin="0, 250, 0, 0" Background="{StaticResource BlockBrush}">
+            <StackPanel Margin="20,40,0,500">
                 <StackPanel>
-                    <TextBlock x:Name="EmployeeAreaTextblock"></TextBlock>
+                    <TextBlock x:Name="EmployeeAreaTextblock" FontSize="20">Разработка продукции</TextBlock>
                 </StackPanel>
             </StackPanel>
-            <StackPanel>
-                <StackPanel>
-                    <TextBlock x:Name="EmployeeFirstNameTextblock"></TextBlock>
+            <StackPanel  Margin="0,82,0,300" Orientation="Horizontal" VerticalAlignment="Center" Height="60">
+                <StackPanel Margin="10,0,10,0">
+                    <TextBlock x:Name="EmployeeFirstNameTextblock" FontSize="20">Алексей</TextBlock>
                 </StackPanel>
-                <StackPanel>
-                    <TextBlock x:Name="EmployeeLastNameTextblock"></TextBlock>
+                <StackPanel Margin="10,0,10,0">
+                    <TextBlock x:Name="EmployeeLastNameTextblock" FontSize="20">Иванов</TextBlock>
                 </StackPanel>
-                <StackPanel>
-                    <TextBlock x:Name="EmployeePatronymicTextblock"></TextBlock>
+                <StackPanel Margin="10,0,10,0">
+                    <TextBlock x:Name="EmployeePatronymicTextblock" FontSize="20">Сергеевич</TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" Margin="0, 0, 0, 100">
+                <StackPanel Margin="10,0,10,0" Orientation="Horizontal">
+                    <TextBlock FontSize="20" Margin="10, 0, 10, 0">Телефон:</TextBlock><TextBlock x:Name="EmployeePhoneTextblock" FontSize="20">+79126459092</TextBlock>
+                </StackPanel>
+                <StackPanel Margin="10,0,10,0" Orientation="Horizontal">
+                    <TextBlock FontSize="20" Margin="10, 0, 10, 0">Email:</TextBlock><TextBlock x:Name="EmployeeEmailTextblock" FontSize="20">Sech.Serg@yandex.ru</TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal">
+                <StackPanel Margin="20, 0, 20, 20">
+                    <Button Width="150" Height="50" Background="{StaticResource AverageButtonBrush}">
+                        <TextBlock FontSize="20">Список задач</TextBlock>
+                    </Button>
+                </StackPanel>
+                <StackPanel Margin="20, 0, 20, 20">
+                    <Button Width="300" Height="50" Background="{StaticResource AverageButtonBrush}">
+                        <TextBlock FontSize="20">Отметить выполнение задачи</TextBlock>
+                    </Button>
                 </StackPanel>
             </StackPanel>
         </Grid>

@@ -8,10 +8,10 @@
       d:DesignHeight="850" d:DesignWidth="800"
       Title="RemoveEmployeePage">
 
-    <Grid>
+    <Grid Background="{StaticResource backgroundbrush}">
         <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0, 50, 0, 0">Удаление сотрудника</TextBlock>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12">
-            <Button x:Name="RemoveEmployeeBackButton" Content="Назад" Width="80" Height="30" Click="RemoveEmployeeBackButton_Click"></Button>
+            <Button Background="{StaticResource AverageButtonBrush}" x:Name="RemoveEmployeeBackButton" Content="Назад" Width="80" Height="30" Click="RemoveEmployeeBackButton_Click"></Button>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 350, 0, 0">
             <UniformGrid>
@@ -19,7 +19,7 @@
                 <ComboBox x:Name="DeleteEmployeeComboBox"></ComboBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center" Margin="10">
-                <Button x:Name="RemoveEmployeeButton" Content="Удалить" Width="80" Height="25" Click="RemoveEmployeeButton_Click"></Button>
+                <Button Background="{StaticResource AcceptButtonBrush}" x:Name="RemoveEmployeeButton" Content="Удалить" Width="80" Height="25" Click="RemoveEmployeeButton_Click"></Button>
             </UniformGrid>
         </StackPanel>
     </Grid>

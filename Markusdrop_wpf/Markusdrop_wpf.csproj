@@ -135,7 +135,7 @@
     <Compile Include="View\Pages\TaskEditPage.xaml.cs">
       <DependentUpon>TaskEditPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="Assets\Dictionary\Dictionary.xaml">
+    <Page Include="Assets\Dictionary\Dictionary1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

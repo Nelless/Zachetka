@@ -8,27 +8,23 @@
       d:DesignHeight="850" d:DesignWidth="800"
       Title="TaskDeletePage">
 
-    <Grid>
+    <Grid Background="{StaticResource backgroundbrush}">
         <StackPanel HorizontalAlignment="Right">
             <Button x:Name="TaskDeleteBackButton" Content="Назад" Width="100" Height="30" Click="TaskDeleteBackButton_Click" Margin="0, 10, 10, 0"></Button>
         </StackPanel>
-        <Grid HorizontalAlignment="Center">
-            <TextBlock FontSize="25" Margin="10, 40, 10, 0">
+        <TextBlock FontSize="25" HorizontalAlignment="Center">
                 Снятие задачи
-            </TextBlock>
+        </TextBlock>
+        <Grid HorizontalAlignment="Center" Margin="78,300,78,400">
             <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                <StackPanel Orientation="Horizontal" Margin="20">
-                    <TextBlock Margin="0, 0, 20, 0">Выбрать сотрудника:</TextBlock>
-                    <ComboBox x:Name="employeeTaskDeleteCombobox" Width="160"></ComboBox>
-                </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="20">
                     <TextBlock Margin="0, 0, 20, 0">Выбрать задачу:</TextBlock>
                     <ComboBox x:Name="TaskDeleteCombobox" Width="160"></ComboBox>
                 </StackPanel>
             </StackPanel>
-            <StackPanel VerticalAlignment="Bottom" Margin="0, 0, 0, 40">
-                <Button x:Name="TaskDeleteButton" Content="Удалить" Width="100" Click="TaskDeleteButton_Click"></Button>
-            </StackPanel>
         </Grid>
+        <StackPanel VerticalAlignment="Bottom" Margin="0, 0, 0, 40">
+            <Button x:Name="TaskDeleteButton" Content="Удалить" Width="100" Click="TaskDeleteButton_Click"></Button>
+        </StackPanel>
     </Grid>
 </Page>

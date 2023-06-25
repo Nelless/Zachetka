@@ -8,68 +8,63 @@
       d:DesignHeight="750" d:DesignWidth="800"
       Title="AddEmployeePage">
 
-    <Grid>
-        <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0, 50, 0, 0">Добавление сотрудника</TextBlock>
+    <Grid Background="{StaticResource backgroundbrush}">
+        <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0, 20, 0, 0">Добавление сотрудника</TextBlock>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12">
-            <Button x:Name="AddEmployeeBackButton" Content="Назад" Width="80" Height="30" Click="AddEmployeeBackButton_Click"></Button>
+            <Button Background="{StaticResource AverageButtonBrush}" x:Name="AddEmployeeBackButton" Content="Назад" Width="80" Height="30" Click="AddEmployeeBackButton_Click"></Button>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" Margin="0, 200, 0, 0" Width="350">
+        <StackPanel Background="{StaticResource BlockBrush}" HorizontalAlignment="Center" Margin="225,80,225,62" Width="350">
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Имя</TextBlock>
-                <TextBox x:Name="FirstNameTextBox" Width="150"></TextBox>
+                <TextBlock Margin="0, 5, 0, 0">Имя</TextBlock>
+                <TextBox Margin="0, 5, 0, 0" x:Name="FirstNameTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Фамилия</TextBlock>
-                <TextBox x:Name="LastNameTextBox" Width="150"></TextBox>
+                <TextBlock Margin="0, 5, 0, 0">Фамилия</TextBlock>
+                <TextBox Margin="0, 5, 0, 0" x:Name="LastNameTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Отчество</TextBlock>
-                <TextBox x:Name="PatronymicTextBox" Width="150"></TextBox>
+                <TextBlock Margin="0, 5, 0, 0">Отчество</TextBlock>
+                <TextBox Margin="0, 5, 0, 0" x:Name="PatronymicTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Телефон</TextBlock>
-                <TextBox x:Name="PhoneTextBox" Width="150"></TextBox>
+                <TextBlock Margin="0, 5, 0, 0">Телефон</TextBlock>
+                <TextBox Margin="0, 5, 0, 0" x:Name="PhoneTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Код паспорта</TextBlock>
-                <TextBox x:Name="PassportCodeTextBox" Width="150"></TextBox>
+                <TextBlock Margin="0, 5, 0, 0">Код паспорта</TextBlock>
+                <TextBox Margin="0, 5, 0, 0" x:Name="PassportCodeTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Номер паспорта</TextBlock>
-                <TextBox x:Name="PassportNumberTextBox" Width="150"></TextBox>
+                <TextBlock Margin="0, 5, 0, 0">Номер паспорта</TextBlock>
+                <TextBox Margin="0, 5, 0, 0" x:Name="PassportNumberTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>ИНН</TextBlock>
-                <TextBox x:Name="INNTextBox" Width="150"></TextBox>
+                <TextBlock Margin="0, 5, 0, 0">ИНН</TextBlock>
+                <TextBox Margin="0, 5, 0, 0" x:Name="INNTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>СНИЛС</TextBlock>
-                <TextBox x:Name="SNILSTextBox" Width="150"></TextBox>
+                <TextBlock Margin="0, 5, 0, 0">СНИЛС</TextBlock>
+                <TextBox Margin="0, 5, 0, 0" x:Name="SNILSTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center">
-                <TextBlock>Email</TextBlock>
-                <TextBox x:Name="EmailTextBox" Width="150"></TextBox>
+                <TextBlock Margin="0, 5, 0, 0">Email</TextBlock>
+                <TextBox Margin="0, 5, 0, 0" x:Name="EmailTextBox" Width="150"></TextBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center" Margin="10">
-                <TextBlock>Роль:</TextBlock>
-                <ComboBox x:Name="UserRoleComboBox" HorizontalAlignment="Center" Width="150"></ComboBox>
+                <TextBlock Margin="0, 5, 0, 0">Роль:</TextBlock>
+                <ComboBox Margin="0, 5, 0, 0" x:Name="UserRoleComboBox" HorizontalAlignment="Center" Width="150"></ComboBox>
             </UniformGrid>
             <UniformGrid>
-                <TextBlock Margin="0, 0, 40, 0">Установить логин</TextBlock>
-                <TextBox x:Name="LoginTextBox"></TextBox>
+                <TextBlock Margin="20, 0, 40, 0">Установить логин</TextBlock>
+                <TextBox Margin="0, 0, 20, 0" x:Name="LoginTextBox"></TextBox>
             </UniformGrid>
             <UniformGrid>
-                <TextBlock Margin="0, 0, 40, 0">Установить пароль</TextBlock>
-                <PasswordBox x:Name="PasswordBox"></PasswordBox>
-            </UniformGrid>
-            <UniformGrid HorizontalAlignment="Center" Margin="10">
-                <Button x:Name="AuthEmployeeButton" Content="Добавить" Width="80" Height="25" Click="AuthEmployeeButton_Click"></Button>
+                <TextBlock Margin="20, 0, 40, 0">Установить пароль</TextBlock>
+                <PasswordBox Margin="0, 0, 20, 0" x:Name="PasswordBox"></PasswordBox>
             </UniformGrid>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
-            <!--<UniformGrid HorizontalAlignment="Center" Margin="10">
-                <Button x:Name="AuthEmployeeButton" Content="Добавить" Width="80" Height="25" Click="AuthEmployeeButton_Click"></Button>
-            </UniformGrid>-->
-        </StackPanel>
+        <UniformGrid VerticalAlignment="Bottom" Margin="10">
+            <Button Background="{StaticResource AcceptButtonBrush}" x:Name="AuthEmployeeButton" Content="Добавить" Width="80" Height="25" Click="AuthEmployeeButton_Click"></Button>
+        </UniformGrid>
     </Grid>
 </Page>

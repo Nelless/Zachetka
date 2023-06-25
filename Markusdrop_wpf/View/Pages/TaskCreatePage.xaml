@@ -8,15 +8,15 @@
       d:DesignHeight="850" d:DesignWidth="800"
       Title="TaskCreatePage">
 
-    <Grid>
+    <Grid Background="{StaticResource backgroundbrush}">
         <StackPanel HorizontalAlignment="Right">
-            <Button x:Name="TaskCreateBackButton" Content="Назад" Width="100" Height="30" Click="TaskCreateBackButton_Click" Margin="0, 10, 10, 0"></Button>
+            <Button Background="{StaticResource AverageButtonBrush}" x:Name="TaskCreateBackButton" Content="Назад" Width="100" Height="30" Click="TaskCreateBackButton_Click" Margin="0, 10, 10, 0"></Button>
         </StackPanel>
         <Grid HorizontalAlignment="Center">
             <TextBlock FontSize="25" Margin="0, 40, 0, 0">
                 Добавление задачи
             </TextBlock>
-            <StackPanel Margin="20, 100, 0, 0">
+            <StackPanel Margin="0,100,0,204" Background="{StaticResource BlockBrush}">
                 <StackPanel HorizontalAlignment="Center">
                     <TextBlock>Название задачи</TextBlock>
                 </StackPanel>
@@ -41,9 +41,9 @@
                 <StackPanel Margin="0, 20, 0, 0">
                     <Calendar></Calendar>
                 </StackPanel>
-                <StackPanel Margin="0, 150, 0, 0">
-                    <Button x:Name="TaskCreateButton" Content="Добавить" Width="100" Click="TaskCreateButton_Click"></Button>
-                </StackPanel>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom" Margin="0, 0, 0, 20">
+                <Button Background="{StaticResource AcceptButtonBrush}" x:Name="TaskCreateButton" Content="Добавить" Width="100" Click="TaskCreateButton_Click"></Button>
             </StackPanel>
         </Grid>
     </Grid>

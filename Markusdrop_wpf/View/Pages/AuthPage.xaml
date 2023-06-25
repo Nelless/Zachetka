@@ -8,8 +8,8 @@
       d:DesignHeight="850" d:DesignWidth="800"
       Title="AuthPage">
 
-    <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500">
+    <Grid Background="{StaticResource backgroundbrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Background="{StaticResource BlockBrush}">
             <UniformGrid HorizontalAlignment="Center"  Margin="5">
                 <TextBlock>Введите логин</TextBlock>
             </UniformGrid>
@@ -23,7 +23,7 @@
                 <PasswordBox x:Name="PasswordTextBox"></PasswordBox>
             </UniformGrid>
             <UniformGrid HorizontalAlignment="Center" Width="200" Margin="15">
-                <Button x:Name="AuthButton" Click="AuthButton_Click" Content="Войти"></Button>
+                <Button Background="{StaticResource AuthButtonBrush}" x:Name="AuthButton" Click="AuthButton_Click" Content="Войти"></Button>
             </UniformGrid>
         </StackPanel>
     </Grid>

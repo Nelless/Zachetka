@@ -8,9 +8,9 @@
       d:DesignHeight="850" d:DesignWidth="800"
       Title="GiveTaskPage">
 
-    <Grid>
+    <Grid Background="{StaticResource backgroundbrush}">
         <StackPanel HorizontalAlignment="Right">
-            <Button x:Name="GiveTaskBackButton" Content="Назад" Width="100" Height="30" Click="GiveTaskBackButton_Click" Margin="0, 10, 10, 0"></Button>
+            <Button Background="{StaticResource AverageButtonBrush}" x:Name="GiveTaskBackButton" Content="Назад" Width="100" Height="30" Click="GiveTaskBackButton_Click" Margin="0, 10, 10, 0"></Button>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
             <StackPanel Orientation="Horizontal">
@@ -31,7 +31,7 @@
             </StackPanel>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 100, 0, 0">
-            <Button x:Name="GiveEmployeeTaskButton" Width="150" Click="GiveEmployeeTaskButton_Click">
+            <Button Background="{StaticResource AcceptButtonBrush}" x:Name="GiveEmployeeTaskButton" Width="150" Click="GiveEmployeeTaskButton_Click">
                 <TextBlock>Выдать</TextBlock>
             </Button>
         </StackPanel>
