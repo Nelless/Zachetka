@@ -47,5 +47,10 @@
                 <Button Background="{StaticResource AverageButtonBrush}" x:Name="TaskDeleteButton" Content="Снять задачу" FontSize="20" Height="50" Width="250" Click="TaskDeleteButton_Click"></Button>
             </StackPanel>
         </StackPanel>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0, 0, 20, 20">
+            <Button Background="{StaticResource AverageButtonBrush}" x:Name="EmployeeTaskRewiewButton" Width="250" Height="100">
+                <TextBlock TextAlignment="Center" FontSize="20">Составить отчет <LineBreak/> о выполненных задачах <LineBreak/> сотрудников в Excel</TextBlock>
+            </Button>
+        </StackPanel>
     </Grid>
 </Page>
