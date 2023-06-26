@@ -9,7 +9,7 @@
       Title="GiveTaskPage">
 
     <Grid Background="{StaticResource backgroundbrush}">
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0, 20, 0, 0">Прикрепить сотрудника к подразделению</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0, 20, 0, 0">Выдать задачу сотруднику</TextBlock>
         <StackPanel HorizontalAlignment="Right">
             <Button Background="{StaticResource AverageButtonBrush}" x:Name="GiveTaskBackButton" Content="Назад" Width="100" Height="30" Click="GiveTaskBackButton_Click" Margin="0, 10, 10, 0"></Button>
         </StackPanel>
