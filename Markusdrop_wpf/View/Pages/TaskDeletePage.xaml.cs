@@ -25,7 +25,6 @@ namespace Markusdrop_wpf.View.Pages
         public TaskDeletePage()
         {
             InitializeComponent();
-            NavigationService.Refresh();
         }
 
         private void TaskDeleteButton_Click(object sender, RoutedEventArgs e)
