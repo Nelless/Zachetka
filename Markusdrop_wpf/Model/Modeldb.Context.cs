@@ -13,10 +13,10 @@ namespace Markusdrop_wpf.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class armmarkdbEntities : DbContext
+    public partial class armmarkdbEntities1 : DbContext
     {
-        public armmarkdbEntities()
-            : base("name=armmarkdbEntities")
+        public armmarkdbEntities1()
+            : base("name=armmarkdbEntities1")
         {
         }
     
@@ -28,7 +28,6 @@ namespace Markusdrop_wpf.Model
         public virtual DbSet<company_areas> company_areas { get; set; }
         public virtual DbSet<company_task> company_task { get; set; }
         public virtual DbSet<employee_task> employee_task { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<user_role> user_role { get; set; }
         public virtual DbSet<users> users { get; set; }
     }

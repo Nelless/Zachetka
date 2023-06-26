@@ -69,38 +69,35 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\company_areas.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Modeldb.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\company_task.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Modeldb.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\employee_task.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Modeldb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Model.Context.cs">
+    <Compile Include="Model\Modeldb.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
+      <DependentUpon>Modeldb.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Model.cs">
+    <Compile Include="Model\Modeldb.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Modeldb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Model.Designer.cs">
+    <Compile Include="Model\Modeldb.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
+      <DependentUpon>Modeldb.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\PartialClasses\users.cs" />
-    <Compile Include="Model\sysdiagrams.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\users.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Modeldb.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\user_role.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>Modeldb.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\AddEmployeePage.xaml.cs">
       <DependentUpon>AddEmployeePage.xaml</DependentUpon>
@@ -250,12 +247,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\Model.edmx">
+    <EntityDeploy Include="Model\Modeldb.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>Modeldb.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
+    <None Include="Model\Modeldb.edmx.diagram">
+      <DependentUpon>Modeldb.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -273,15 +270,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\Model.Context.tt">
+    <Content Include="Model\Modeldb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <DependentUpon>Modeldb.edmx</DependentUpon>
+      <LastGenOutput>Modeldb.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model\Model.tt">
+    <Content Include="Model\Modeldb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
+      <DependentUpon>Modeldb.edmx</DependentUpon>
+      <LastGenOutput>Modeldb.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
