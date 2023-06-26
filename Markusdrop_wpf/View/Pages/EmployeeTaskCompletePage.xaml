@@ -15,7 +15,7 @@
                 <TextBlock>Назад</TextBlock>
             </Button>
         </StackPanel>
-        <StackPanel VerticalAlignment="Center" Margin="30,183,30,223" Height="344" Background="{StaticResource BlockBrush}">
+        <StackPanel VerticalAlignment="Center" Margin="30,300,30,230" Height="230" Background="{StaticResource BlockBrush}">
             <StackPanel Orientation="Horizontal" Margin="60, 30, 0, 50">
                 <StackPanel>
                     <TextBlock Margin="0, 0, 100, 0">Выбрать задачу</TextBlock>
@@ -30,14 +30,6 @@
                 </StackPanel>
                 <StackPanel>
                     <DatePicker Width="300"></DatePicker>
-                </StackPanel>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="60, 30, 0, 50">
-                <StackPanel>
-                    <TextBlock Margin="0, 0, 140, 0">Заметка</TextBlock>
-                </StackPanel>
-                <StackPanel>
-                    <RichTextBox Width="300"></RichTextBox>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

@@ -34,13 +34,13 @@
                 </DataGrid>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="0, 40, 0, 0">
-                <Button x:Name="IfEmployeeTaskCompleteButton" Background="{StaticResource AverageButtonBrush}" Width="250" Height="50" Click="IfEmployeeTaskCompleteButton_Click">
+                <Button x:Name="IfEmployeeTaskCompleteButton" Background="{StaticResource AverageButtonBrush}" Width="300" Height="50" Click="IfEmployeeTaskCompleteButton_Click">
                     <TextBlock FontSize="15">Проследить выполнение задач</TextBlock>
                 </Button>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="0, 40, 0, 0">
-                <Button x:Name="ManagerEmployeeListButton" Background="{StaticResource AverageButtonBrush}" Width="250" Height="50" Click="ManagerEmployeeListButton_Click">
-                    <TextBlock FontSize="15">Проследить выполнение задач</TextBlock>
+                <Button x:Name="ManagerEmployeeListButton" Background="{StaticResource AverageButtonBrush}" Width="300" Height="50" Click="ManagerEmployeeListButton_Click">
+                    <TextBlock FontSize="15">Список сотрудников подразделения</TextBlock>
                 </Button>
             </StackPanel>
         </StackPanel>
