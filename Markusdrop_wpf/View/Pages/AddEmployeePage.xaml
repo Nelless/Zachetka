@@ -9,7 +9,7 @@
       Title="AddEmployeePage">
 
     <Grid Background="{StaticResource backgroundbrush}">
-        <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0, 20, 0, 0">Добавление сотрудника</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0, 20, 0, 0">Добавление сотрудника</TextBlock>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12">
             <Button Background="{StaticResource AverageButtonBrush}" x:Name="AddEmployeeBackButton" Content="Назад" Width="80" Height="30" Click="AddEmployeeBackButton_Click"></Button>
         </StackPanel>

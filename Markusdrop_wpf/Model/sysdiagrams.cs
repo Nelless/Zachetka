@@ -12,18 +12,12 @@ namespace Markusdrop_wpf.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class company_areas
+    public partial class sysdiagrams
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public company_areas()
-        {
-            this.users = new HashSet<users>();
-        }
-    
-        public int id_area { get; set; }
-        public string area_name { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<users> users { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

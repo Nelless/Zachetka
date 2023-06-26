@@ -8,7 +8,8 @@
       d:DesignHeight="850" d:DesignWidth="800"
       Title="ManagerPage">
     <Grid Background="{StaticResource backgroundbrush}">
-        <StackPanel HorizontalAlignment="Left" Width="360" Margin="40, 0, 0, 0">
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0, 20, 0, 0">Страница Руководителя</TextBlock>
+        <StackPanel HorizontalAlignment="Left" Width="360" Margin="40, 50, 0, 0">
             <StackPanel Margin="0, 20, 0, 0">
                 <StackPanel>
                     <TextBlock>Поиск</TextBlock>
@@ -32,8 +33,18 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0, 40, 0, 0">
+                <Button x:Name="IfEmployeeTaskCompleteButton" Background="{StaticResource AverageButtonBrush}" Width="250" Height="50" Click="IfEmployeeTaskCompleteButton_Click">
+                    <TextBlock FontSize="15">Проследить выполнение задач</TextBlock>
+                </Button>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0, 40, 0, 0">
+                <Button x:Name="ManagerEmployeeListButton" Background="{StaticResource AverageButtonBrush}" Width="250" Height="50" Click="ManagerEmployeeListButton_Click">
+                    <TextBlock FontSize="15">Проследить выполнение задач</TextBlock>
+                </Button>
+            </StackPanel>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Right" Width="360">
+        <StackPanel HorizontalAlignment="Right" Width="360" Margin="0, 40, 0, 0">
             <StackPanel Margin="0, 40, 0, 0">
                 <Button Background="{StaticResource AverageButtonBrush}" x:Name="TaskCreateButton" Content="Создание задачи" FontSize="20" Height="50" Width="250" Click="TaskCreateButton_Click"></Button>
             </StackPanel>

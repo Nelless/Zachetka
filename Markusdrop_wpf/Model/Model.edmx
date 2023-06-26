@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище armmarkdbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище armmarkdbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="company_areas">
           <Key>
             <PropertyRef Name="id_area" />
@@ -30,6 +30,16 @@
           <Property Name="id_employee_fk" Type="int" />
           <Property Name="id_task_fk" Type="int" />
           <Property Name="task_completedate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="user_role">
           <Key>
@@ -112,6 +122,7 @@
           <EntitySet Name="company_areas" EntityType="Self.company_areas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="company_task" EntityType="Self.company_task" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="employee_task" EntityType="Self.employee_task" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user_role" EntityType="Self.user_role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_employee_task_company_task" Association="Self.FK_employee_task_company_task">
@@ -139,6 +150,7 @@
           <EntitySet Name="company_areas" EntityType="armmarkdbModel.company_areas" />
           <EntitySet Name="company_task" EntityType="armmarkdbModel.company_task" />
           <EntitySet Name="employee_task" EntityType="armmarkdbModel.employee_task" />
+          <EntitySet Name="sysdiagrams" EntityType="armmarkdbModel.sysdiagrams" />
           <EntitySet Name="user_role" EntityType="armmarkdbModel.user_role" />
           <EntitySet Name="users" EntityType="armmarkdbModel.users" />
           <AssociationSet Name="FK_employees_company_areas" Association="armmarkdbModel.FK_employees_company_areas">
@@ -187,6 +199,16 @@
           <Property Name="task_completedate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="company_task" Relationship="armmarkdbModel.FK_employee_task_company_task" FromRole="employee_task" ToRole="company_task" />
           <NavigationProperty Name="users" Relationship="armmarkdbModel.FK_employee_task_users" FromRole="employee_task" ToRole="users" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="user_role">
           <Key>
@@ -269,7 +291,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        </Schema>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -301,6 +323,17 @@
                 <ScalarProperty Name="id_task_fk" ColumnName="id_task_fk" />
                 <ScalarProperty Name="id_employee_fk" ColumnName="id_employee_fk" />
                 <ScalarProperty Name="id_employee_task" ColumnName="id_employee_task" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="armmarkdbModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -349,7 +382,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
       </DesignerInfoPropertySet>
     </Options>

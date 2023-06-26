@@ -10,7 +10,7 @@
 
     <Grid Background="{StaticResource backgroundbrush}">
         <!---->
-        <TextBlock HorizontalAlignment="Center" FontSize="20">Присоединить сотрудника к подразделению</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0, 20, 0, 0">Присоединить сотрудника к подразделению</TextBlock>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12">
             <Button Background="{StaticResource AverageButtonBrush}" x:Name="AreaEmployeeBackButton" Content="Назад" Width="80" Height="30" Click="AreaEmployeeBackButton_Click"></Button>
         </StackPanel>

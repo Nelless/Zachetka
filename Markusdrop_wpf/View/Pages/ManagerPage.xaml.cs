@@ -51,5 +51,15 @@ namespace Markusdrop_wpf.View.Pages
         {
             this.NavigationService.Navigate(new TaskDeletePage());
         }
+
+        private void IfEmployeeTaskCompleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new ManagerTaskListPage());
+        }
+
+        private void ManagerEmployeeListButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new ManagerEmployeeListPage());
+        }
     }
 }

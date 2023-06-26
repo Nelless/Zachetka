@@ -10,7 +10,7 @@
 
     <Grid Background="{StaticResource backgroundbrush}">
         <Grid Margin="0, 250, 0, 0" Background="{StaticResource BlockBrush}">
-            <StackPanel Margin="20,40,0,500">
+            <StackPanel Margin="20,30,0,500">
                 <StackPanel>
                     <TextBlock x:Name="EmployeeAreaTextblock" FontSize="20">Разработка продукции</TextBlock>
                 </StackPanel>
@@ -36,12 +36,12 @@
             </StackPanel>
             <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal">
                 <StackPanel Margin="20, 0, 20, 20">
-                    <Button Width="150" Height="50" Background="{StaticResource AverageButtonBrush}">
+                    <Button x:Name="EmpoloyeeTaskListButton" Width="150" Height="50" Background="{StaticResource AverageButtonBrush}" Click="EmpoloyeeTaskListButton_Click">
                         <TextBlock FontSize="20">Список задач</TextBlock>
                     </Button>
                 </StackPanel>
                 <StackPanel Margin="20, 0, 20, 20">
-                    <Button Width="300" Height="50" Background="{StaticResource AverageButtonBrush}">
+                    <Button x:Name="EmployeeTaskCompleteButton" Width="300" Height="50" Background="{StaticResource AverageButtonBrush}" Click="EmployeeTaskCompleteButton_Click">
                         <TextBlock FontSize="20">Отметить выполнение задачи</TextBlock>
                     </Button>
                 </StackPanel>

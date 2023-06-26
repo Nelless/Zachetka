@@ -9,7 +9,7 @@
       Title="RemoveEmployeePage">
 
     <Grid Background="{StaticResource backgroundbrush}">
-        <TextBlock HorizontalAlignment="Center" FontSize="20" Margin="0, 50, 0, 0">Удаление сотрудника</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0, 50, 0, 0">Удаление сотрудника</TextBlock>
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="12">
             <Button Background="{StaticResource AverageButtonBrush}" x:Name="RemoveEmployeeBackButton" Content="Назад" Width="80" Height="30" Click="RemoveEmployeeBackButton_Click"></Button>
         </StackPanel>

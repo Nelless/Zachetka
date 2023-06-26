@@ -13,10 +13,10 @@
             <Button Background="{StaticResource AverageButtonBrush}" x:Name="TaskCreateBackButton" Content="Назад" Width="100" Height="30" Click="TaskCreateBackButton_Click" Margin="0, 10, 10, 0"></Button>
         </StackPanel>
         <Grid HorizontalAlignment="Center">
-            <TextBlock FontSize="25" Margin="0, 40, 0, 0">
+            <TextBlock VerticalAlignment="Top" FontSize="25" Margin="0, 40, 0, 0">
                 Добавление задачи
             </TextBlock>
-            <StackPanel Margin="0,100,0,204" Background="{StaticResource BlockBrush}">
+            <StackPanel Background="{StaticResource BlockBrush}" VerticalAlignment="Center">
                 <StackPanel HorizontalAlignment="Center">
                     <TextBlock>Название задачи</TextBlock>
                 </StackPanel>
@@ -33,13 +33,13 @@
                     <TextBlock>Дата начала задачи</TextBlock>
                 </StackPanel>
                 <StackPanel Margin="0, 20, 0, 0">
-                    <Calendar></Calendar>
+                    <DatePicker></DatePicker>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
                     <TextBlock>Дата окончания задачи</TextBlock>
                 </StackPanel>
                 <StackPanel Margin="0, 20, 0, 0">
-                    <Calendar></Calendar>
+                    <DatePicker></DatePicker>
                 </StackPanel>
             </StackPanel>
             <StackPanel VerticalAlignment="Bottom" Margin="0, 0, 0, 20">

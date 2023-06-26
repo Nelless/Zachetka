@@ -12,42 +12,42 @@
         <StackPanel HorizontalAlignment="Right">
             <Button x:Name="TaskEditBackButton" Content="Назад" Width="100" Height="30" Click="TaskEditBackButton_Click" Margin="0, 10, 10, 0"></Button>
         </StackPanel>
-        <TextBlock FontSize="25" HorizontalAlignment="Center" Margin="263,0,263,804">
+        <TextBlock FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0">
                 Редактирование задачи
         </TextBlock>
-        <StackPanel Background="{StaticResource BlockBrush}" Margin="263,100,263,162">
-                <StackPanel HorizontalAlignment="Center">
-                    <TextBlock>Выбрать задачу:</TextBlock>
-                </StackPanel>
-                <StackPanel Margin="0, 10, 0, 0">
-                    <ComboBox Margin="10, 0, 10, 0" x:Name="TaskEditTComboBox" SelectionChanged="TaskEditTComboBox_SelectionChanged"></ComboBox>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
-                    <TextBlock>Изменить название задачи:</TextBlock>
-                </StackPanel>
-                <StackPanel Margin="0, 10, 0, 0">
-                    <TextBox Margin="10, 0, 10, 0" Text="{Binding task_name}" Height="22"></TextBox>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
-                    <TextBlock>Изменить текст задачи:</TextBlock>
-                </StackPanel>
-                <StackPanel Margin="0, 10, 0, 0">
-                    <TextBox Margin="10, 0, 10, 0" Text="{Binding task_name}" Height="22"></TextBox>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
-                    <TextBlock>Дата начала задачи</TextBlock>
-                </StackPanel>
-                <StackPanel Margin="0, 10, 0, 0">
-                    <Calendar></Calendar>
-                </StackPanel>
-                <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
-                    <TextBlock>Дата окончания задачи</TextBlock>
-                </StackPanel>
-                <StackPanel Margin="0, 10, 0, 0">
-                    <Calendar></Calendar>
-                </StackPanel>
+        <StackPanel Background="{StaticResource BlockBrush}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="200,200,200,200" Width="233">
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock>Выбрать задачу:</TextBlock>
             </StackPanel>
-            <StackPanel VerticalAlignment="Bottom" Margin="0, 0, 0, 20">
+            <StackPanel Margin="0, 10, 0, 0">
+                <ComboBox Margin="10, 0, 10, 0" x:Name="TaskEditTComboBox" SelectionChanged="TaskEditTComboBox_SelectionChanged"></ComboBox>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
+                <TextBlock>Изменить название задачи:</TextBlock>
+            </StackPanel>
+            <StackPanel Margin="0, 10, 0, 0">
+                <TextBox Margin="10, 0, 10, 0" Text="{Binding task_name}" Height="22"></TextBox>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
+                <TextBlock>Изменить текст задачи:</TextBlock>
+            </StackPanel>
+            <StackPanel Margin="0, 10, 0, 0">
+                <TextBox Margin="10, 0, 10, 0" Text="{Binding task_name}" Height="22"></TextBox>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
+                <TextBlock>Дата начала задачи</TextBlock>
+            </StackPanel>
+            <StackPanel Margin="0, 10, 0, 0">
+                <DatePicker></DatePicker>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Margin="0, 10, 0, 0">
+                <TextBlock>Дата окончания задачи</TextBlock>
+            </StackPanel>
+            <StackPanel Margin="0, 10, 0, 0">
+                <DatePicker></DatePicker>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Margin="0, 0, 0, 20">
             <Button Background="{StaticResource AcceptButtonBrush}" x:Name="TaskEditButton" Content="Подтвердить" Width="100" Click="TaskEditButton_Click"></Button>
         </StackPanel>
     </Grid>

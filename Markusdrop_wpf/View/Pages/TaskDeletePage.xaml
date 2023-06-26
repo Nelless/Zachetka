@@ -12,7 +12,7 @@
         <StackPanel HorizontalAlignment="Right">
             <Button Background="{StaticResource AverageButtonBrush}" x:Name="TaskDeleteBackButton" Content="Назад" Width="100" Height="30" Click="TaskDeleteBackButton_Click" Margin="0, 10, 10, 0"></Button>
         </StackPanel>
-        <TextBlock FontSize="25" HorizontalAlignment="Center">
+        <TextBlock FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Top">
                 Снятие задачи
         </TextBlock>
         <Grid HorizontalAlignment="Center" Margin="78,300,78,400">

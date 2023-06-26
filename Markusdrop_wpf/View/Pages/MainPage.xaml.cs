@@ -41,5 +41,15 @@ namespace Markusdrop_wpf.View.Pages
             //    EmployeeFirstNameTextblock.Text
             //}
         }
+
+        private void EmpoloyeeTaskListButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new EmployeeTaskListPage());
+        }
+
+        private void EmployeeTaskCompleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new EmployeeTaskCompletePage());
+        }
     }
 }

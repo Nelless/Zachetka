@@ -9,10 +9,11 @@
       Title="AdminPage">
 
     <Grid Background="{StaticResource backgroundbrush}">
-        <StackPanel HorizontalAlignment="Left">
-            <StackPanel HorizontalAlignment="Center" Width="227">
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" TextAlignment="Center" Margin="0, 20, 0, 0">Страница администратора</TextBlock>
+        <StackPanel HorizontalAlignment="Left" Background="{StaticResource BlockBrush}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="227">
                 <StackPanel>
-                    <Button Background="{StaticResource AverageButtonBrush}" x:Name="AddEmployeeButton" Width="200" Height="100" Margin="0, 20, 0, 20" Click="AddEmployeeButton_Click">
+                    <Button Background="{StaticResource AverageButtonBrush}" x:Name="AddEmployeeButton" Width="200" Height="100" Margin="0, 60, 0, 20" Click="AddEmployeeButton_Click">
                         <TextBlock TextAlignment="Center">Добавление и регистрация <LineBreak/> сотрудника</TextBlock>
                     </Button>
                 </StackPanel>

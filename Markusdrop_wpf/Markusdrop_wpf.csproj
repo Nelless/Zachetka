@@ -69,35 +69,38 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\company_areas.cs">
-      <DependentUpon>dbmodel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\company_task.cs">
-      <DependentUpon>dbmodel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\dbmodel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbmodel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\dbmodel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbmodel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\dbmodel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbmodel.edmx</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\employee_task.cs">
-      <DependentUpon>dbmodel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\PartialClasses\users.cs" />
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\users.cs">
-      <DependentUpon>dbmodel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\user_role.cs">
-      <DependentUpon>dbmodel.tt</DependentUpon>
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\AddEmployeePage.xaml.cs">
       <DependentUpon>AddEmployeePage.xaml</DependentUpon>
@@ -114,14 +117,26 @@
     <Compile Include="View\Pages\EditEmployeeInfoPage.xaml.cs">
       <DependentUpon>EditEmployeeInfoPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\EmployeeTaskCompletePage.xaml.cs">
+      <DependentUpon>EmployeeTaskCompletePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\EmployeeTaskListPage.xaml.cs">
+      <DependentUpon>EmployeeTaskListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\GiveTaskPage.xaml.cs">
       <DependentUpon>GiveTaskPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Pages\ManagerEmployeeListPage.xaml.cs">
+      <DependentUpon>ManagerEmployeeListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\ManagerPage.xaml.cs">
       <DependentUpon>ManagerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pages\ManagerTaskListPage.xaml.cs">
+      <DependentUpon>ManagerTaskListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\RemoveEmployeePage.xaml.cs">
       <DependentUpon>RemoveEmployeePage.xaml</DependentUpon>
@@ -171,6 +186,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pages\EmployeeTaskCompletePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\EmployeeTaskListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\GiveTaskPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -179,7 +202,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Pages\ManagerEmployeeListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Pages\ManagerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pages\ManagerTaskListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -219,12 +250,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\dbmodel.edmx">
+    <EntityDeploy Include="Model\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dbmodel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\dbmodel.edmx.diagram">
-      <DependentUpon>dbmodel.edmx</DependentUpon>
+    <None Include="Model\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -236,20 +267,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\dbmodel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbmodel.edmx</DependentUpon>
-      <LastGenOutput>dbmodel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\dbmodel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dbmodel.edmx</DependentUpon>
-      <LastGenOutput>dbmodel.cs</LastGenOutput>
-    </Content>
+    <Resource Include="Assets\Images\logo1.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
